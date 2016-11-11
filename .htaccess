@@ -1,0 +1,2 @@
+ErrorDocument 404 /mrrobot/error.php
+DirectoryIndex /mrrobot/index.php

@@ -1,0 +1,60 @@
+#top{
+    background-color: #EEEEEE;
+    border-bottom: 1px solid #e2e2e2;
+    padding: 4px 0px 3px 0;
+    margin: 0 0 20px 0;
+    min-height: 40px;
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+}
+#language a{
+    text-decoration: none;
+    color: black;
+    margin: 6px 0px 0px 150px;
+    
+    float: left;
+    font-size: 15px;
+}
+#top-links{
+    padding-top: 6px;
+}
+.nav{
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+
+}
+.pull-left{
+    float:left;
+
+}
+.list-inline li{
+
+}
+#top-links a {
+    color: #888;
+    text-shadow: 0 1px 0 #FFF;
+    text-decoration: none;
+}
+/* nav bar hover event*/
+ #fb:hover {
+    color: #4060A5;
+}
+
+#tw:hover {
+    color: #00ABE3;
+}
+
+#go:hover {
+    color: #e64522;
+}
+
+#wishlist-total:hover i{
+    color: red;}
+
+#ua:hover i{
+        color: #4060A5;
+
+
+}

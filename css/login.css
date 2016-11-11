@@ -17,26 +17,30 @@ body{
             user-select: none; /* Non-prefixed version, currently
                                   not supported by any browser */
 }
-#content{
-    margin: 130px 0px 1px 101px;
-    background-color: red;
-   /* width: 30%;*/
-    padding-bottom: 11px;
+
+#reg-div {
+  position: relative;
+} 
+/* Main div for border to extend to 50% from bottom left corner */
+#reg-div:after {
+  content:""; 
+  background: #f00; 
+  position: absolute; 
+  bottom: 0px; 
+  left: 0; 
+  height: 95%; 
+  width: 1px;
 }
-#content a{
+#login-div a{
 	text-decoration: none;
 	color:#ccc;
 	margin-top: 1%;
 }
-#content a:hover{
+#login-div a:hover{
 	text-decoration: none;
-	color:#fff;
+	color:red;
 }
-#content2{
-	background-color: green;
-	margin:130px 0px 0px 0px;
-/*	width: 20%*/
-}
+
 #fix-footer{
 
     margin: 0;
@@ -44,3 +48,12 @@ body{
     padding: 0;
 
 }
+#content{
+      margin: 84px auto auto auto;
+      border: 1px solid #333;
+}
+#reg-btn{
+      margin-top: 56px;
+    left: 177px;
+}
+/*custom off set*/

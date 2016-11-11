@@ -29,38 +29,50 @@ require("functions/engine.php");
 
 
 <div class="container">
-
-<div class="row" style="background-color: red;">
-	    <div id="" class="col-sm-8" style="background-color: blue;">   
+<div id="content" class="noselect">
+<div class="row" ">
+	    <div id="login-div" class="col-sm-8" ">   
          
-          <h4>Signin to your Account</h4>
+          <h3>Signin to your Account</h3>
 	<hr>
 	<form action="#" method="post"  class="form-horizontal">
         <fieldset id="login">
           <div class="form-group required">
-            <label class="col-sm-4 control-label" style="background-color: black;" for="input-username">Username:</label>
-            <div class="col-sm-8" style="background-color: pink;">
+            <label class="col-sm-2 control-label" for="input-username">Username:</label>
+            <div class="col-sm-6" >
               <input type="text" name="username" value="" id="input-username" class="form-control"  />
                           </div>
           </div>
           <div class="form-group required">
-            <label class="col-sm-4 control-label" style="background-color: purple;" for="input-password">password:&naps; </label>
-            <div class="col-sm-8" style="background-color: brown;">
+            <label class="col-sm-2 control-label" for="input-password">Password:</label>
+            <div class="col-sm-6" >
               <input type="password"  name="password" value=""  id="input-password" class="form-control" />
                           </div>
           </div>
           </fieldset>
           <div class="form-group ">
-          <a href="#" class="col-sm-6" style="background-color:green;">forgot your password</a>
-          <input type="submit" value="Continue" class="btn btn-primary col-sm-6" style="background-color: red;" />
+          <p class="col-sm-6 col-sm-offset-3" >error message will display here</p>
+          <a href="#" class="col-sm-4 col-sm-offset-1" >forgot your password</a>
+          <input type="submit" value="Continue" class="btn btn-primary col-sm-3 col-sm-offset-1"  />
           </div>
 	
 	</form>
 	</div>
 
-	<div id="content2" class="col-sm-4">
+	<div id="reg-div" class="col-sm-4">
 	
-	<h4>register</h4>
+	<h3>Register</h3>
+	<hr>
+	<div class="col-sm-12">
+	<P>create one account for MRROBOT e-Mall and use it in multible store with one shoping cart and one check-out process</P>
+
+	</div>
+	<div class="col-sm-12">
+	<button  id="reg-btn"  class="btn btn-primary col-sm-3 col-sm-offset-2" >Register</button>
+          
+	</div>
+
+
 
 		</div>
 	
@@ -71,13 +83,15 @@ require("functions/engine.php");
 	
 	</div>
 	</div>
+	</div>
 
 
 
 
 
-<div class="container" id="fix-footer">
+
+
 <?php printfooter();?>
-</div>
+
 </body>
 </html>

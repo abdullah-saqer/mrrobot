@@ -32,7 +32,7 @@ require("functions/engine.php");
 
 <div class="row">         
        <div id="content" class="col-sm-9">      <h1>Register Account</h1>
-      <p>If you already have an account with us, please login at the <a href="#">login page</a>.</p>
+      <p>If you already have an account with us, please login at the <a href="/mrrobot/login.php">login page</a>.</p>
       <form action="#" method="post"  class="form-horizontal">
         <fieldset id="account">
           <legend>Your Personal Details</legend>

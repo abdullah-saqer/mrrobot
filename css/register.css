@@ -31,3 +31,8 @@
 	-o-transform: rotate(-45deg);
 	transform: rotate(-45deg);
 }
+div.required .control-label:before {
+	content: '* ';
+	color: #F00;
+	font-weight: bold;
+}

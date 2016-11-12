@@ -76,7 +76,7 @@ require("functions/engine.php");
 
 	</div>
 	<div class="col-sm-12">
-	<button  id="reg-btn-reg"  class="btn btn-success col-sm-3 col-sm-offset-1" >Register</button>
+	<button id="reg-btn-reg" class="btn btn-success col-sm-3 col-sm-offset-1" onclick="window.location.href='/mrrobot/Register.php'">Register</button>
           
 	</div>
 	<div class="col-sm-12">

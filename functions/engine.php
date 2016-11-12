@@ -9,7 +9,7 @@ function printNavBar(){
   <ul class="social list-inline">
                     <li ><a id="fb" href="#"><i class="fa fa-lg fa-facebook"></i></a><span class="hidden-xs hidden-sm hidden-md"></span></li>
                     <li ><a id="tw" href="#"><i class="fa fa-lg fa-twitter"></i></a><span class="hidden-xs hidden-sm hidden-md"></span></li>
-                    <li><a id="go" href="#"><i class="fa fa-lg fa-google-plus"></i></a><span class="hidden-xs hidden-sm hidden-md"></span></li>
+                    <li><a id="go" href="#"><i class="fa fa-lg fa-instagram" ></i></a><span class="hidden-xs hidden-sm hidden-md"></span></li>
                     
                 </ul></div>
   <div id="top-links" class="nav pull-right">
@@ -18,7 +18,7 @@ function printNavBar(){
         <li class="dropdown"><a id="ua" href="#" title="My Account" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <span class="hidden-xs hidden-sm hidden-md">My Account</span> <span class="caret"></span></a>
           <ul class="dropdown-menu dropdown-menu-right">
                         <li><a href="/Mrrobot/register.php">Register</a></li>
-            <li><a href="#">Login</a></li>
+            <li><a href="/mrrobot/login.php">Login</a></li>
                       </ul>
         </li>
         <li><a href="#" id="wishlist-total" title="Wish List (0)"><i class="fa fa-heart"></i> <span class="hidden-xs hidden-sm hidden-md">Wish List (0)</span></a></li>
@@ -86,6 +86,39 @@ function printItem(){
       </div>
      </div>
    ';
+}
+// print cart content when press at cart button 
+function viewcart(){
+  echo'<li>
+      <table class="table table-striped">
+                <tr>
+          <td class="text-center">            <a href="#"><img style="width:42px; height:43px;" src="images/items/macbook_1-200x200.jpg" alt="macbook" title="macbook" class="img-thumbnail" /></a>
+            </td>
+          <td class="text-left"><a href="#">Macbook</a>
+                        </td>
+          <td class="text-right">1</td>
+          <td class="text-right">660 JD</td>
+          <td class="text-center"><button type="button" onclick="#" title="Remove" class="btn btn-danger btn-xs"><i class="fa fa-times"></i></button></td>
+        </tr>
+                      </table>
+    </li>
+    <li>
+      <div>
+        <table class="table table-bordered">
+                    <tr>
+            <td class="text-right"><strong>Sub-Total</strong></td>
+            <td class="text-right">660 JD</td>
+          </tr>
+            
+             
+                    <tr>
+            <td class="text-right"><strong>Total</strong></td>
+            <td class="text-right">660 JD</td>
+          </tr>
+                  </table>
+        <p class="text-right"><a href="/mrrobot/cart.php"><strong><i class="fa fa-shopping-cart"></i> View Cart</strong></a>&nbsp;&nbsp;&nbsp;<a href="#"><strong><i class="fa fa-share"></i> Checkout</strong></a></p>
+      </div>
+    </li>';
 }
 
 ?>

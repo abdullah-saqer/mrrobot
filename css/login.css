@@ -20,25 +20,31 @@ body{
 
 #reg-div {
   position: relative;
+  background-color: #f7f8f9;
 } 
 /* Main div for border to extend to 50% from bottom left corner */
 #reg-div:after {
   content:""; 
-  background: #f00; 
+  background: #703838; 
   position: absolute; 
   bottom: 0px; 
   left: 0; 
-  height: 95%; 
+  height: 100%; 
   width: 1px;
 }
 #login-div a{
 	text-decoration: none;
-	color:#ccc;
+	color:#545150
+;
 	margin-top: 1%;
 }
 #login-div a:hover{
 	text-decoration: none;
 	color:red;
+}
+#login-div h3{
+  padding-left: 15px;
+}
 }
 
 #fix-footer{
@@ -49,11 +55,99 @@ body{
 
 }
 #content{
-      margin: 84px auto auto auto;
-      border: 1px solid #333;
+      margin: 30px auto auto auto;
+      border: 1px solid #222;
 }
-#reg-btn{
-      margin-top: 56px;
-    left: 177px;
-}
+
 /*custom off set*/
+/* location bar*/
+.breadcrumb{
+      margin: 70px 0 20px 0;
+    padding: 8px 0;
+    border: 1px solid #ddd;
+}
+.breadcrumb  li{
+      text-shadow: 0 1px 0 #FFF;
+    padding: 0 20px;
+    position: relative;
+    white-space: nowrap;
+}
+.breadcrumb > li + li:before {
+  content: '';
+  padding: 0;
+}
+.breadcrumb > li:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: -3px;
+  right: -5px;
+  width: 26px;
+  height: 26px;
+  border-right: 1px solid #DDD;
+  border-bottom: 1px solid #DDD;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+#reg-div .btn{
+  width: 60%;
+  margin-bottom: 8px;
+}
+/*fix background color*/
+.row{
+  margin-right: 0px !important;
+  margin-left: 0px !important;
+}
+#reg-div{
+      padding-bottom: 13px;
+}
+#login-div{
+  background-color:#f4f6f9;
+
+
+}
+ 
+    @media  screen and (min-width : 1200px) {
+      #reg-div {
+   padding-bottom: 53px;
+
+    }
+  }
+
+    /* Medium Devices, Desktops */
+    @media  screen and (max-width:1999px) {
+         #login-div{ padding-bottom: 39px;
+}
+
+    }
+
+    /* Small Devices, Tablets */
+    @media  screen and (max-width : 991px) {
+               #login-div{ padding-bottom: 29px;
+
+}
+    }
+
+    /* Extra Small Devices, Phones */ 
+    @media screen and (max-width : 769px) {
+      #login-div{
+    padding-top: 1px;
+    padding-bottom: 1px;
+      }
+      #reg-div{
+        padding-top: 1px;
+      }
+      #reg-div:after{
+        content: ;
+        background:transparent;
+      }
+
+    }
+    @media screen and (max-width : 342px) {
+#reg-div .btn{
+  width: 75%;
+  margin-bottom: 8px;
+}
+    }

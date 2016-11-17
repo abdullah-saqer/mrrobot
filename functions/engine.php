@@ -52,9 +52,9 @@ echo'<footer>
 <div class="col-sm-4">
 <h5>My account</h5>
 <ul class="list-unstyled">
-          <li><a href="#">My Account</a></li>
-          <li><a href="#">Order History</a></li>
-          <li><a href="#">Wish List</a></li>
+          <li><a href="/mrrobot/profile.php">My Account</a></li>
+          <li><a href="/mrrobot/profile.php?id=history">Order History</a></li>
+          <li><a href="/mrrobot/profile.php?id=wishlist">Wish List</a></li>
           <li><a href="#">Newsletter</a></li>
         </ul>
 </div>
@@ -89,6 +89,12 @@ function printItem(){
 }
 // print cart content when press at cart button 
 function viewcart(){
+  if(true){
+    echo'  <li>
+        <p class="text-center" id="cart_info">Your shopping cart is empty!</p>
+      </li>';}
+      else
+  
   echo'<li>
       <table class="table table-striped">
                 <tr>

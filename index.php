@@ -13,8 +13,7 @@ require("functions/engine.php");
 <script src="https://code.jquery.com/jquery-2.2.4.js"
 			  integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
 			  crossorigin="anonymous"></script>
-<meta name="viewport" content="width=device-width" />
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="javascript/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
 <script src="javascript/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
 <link href="//fonts.googleapis.com/css?family=Open+Sans:400,400i,300,700" rel="stylesheet" type="text/css">
@@ -46,7 +45,10 @@ require("functions/engine.php");
                  
 
 <header>
-	<a href="#" id="back-to-top" title="Back to top">&uarr;</a>
+	<!--<a href="#" id="back-to-top" title="Back to top">&uarr;</a>-->
+  <div class="scroll_to_top">
+        <span id="up_arrow" class="glyphicon glyphicon-menu-up">
+      </div>
 
    <div class="row">
       <div class="col-sm-4">
@@ -66,9 +68,7 @@ require("functions/engine.php");
       <div id="cart" class="btn-group btn-block">
   		<button type="button" data-toggle="dropdown" class="btn btn-inverse btn-block btn-lg dropdown-toggle"><i class="fa fa-shopping-cart"></i> <span id="cart-total">0 item(s) - $0.00</span></button>
   		<ul class="dropdown-menu pull-right">
-        <li>
-      	<p class="text-center" id="cart_info">Your shopping cart is empty!</p>
-    	</li>
+      <?php viewcart();?>
       </ul>
 </div>
 </div>

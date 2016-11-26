@@ -206,4 +206,9 @@ header{
 .hidden-md {
 	margin-top: 45px;
 }
+@-moz-document url-prefix() {
+    .img-responsive{
+        height: 190px !important;
+    }
+}
 

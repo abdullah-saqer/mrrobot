@@ -12,7 +12,7 @@ require("functions/engine.php");
 <link rel="stylesheet" type="text/css" href="css/footer.css">
 <link rel="stylesheet" type="text/css" href="css/index.css">
 <link rel="stylesheet" type="text/css" href="css/viewitems.css">
-<script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="javascript/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
 <script src="javascript/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
 <link href="//fonts.googleapis.com/css?family=Open+Sans:400,400i,300,700" rel="stylesheet" type="text/css">
@@ -248,6 +248,8 @@ require("functions/engine.php");
      
 
 </div>
+</div>
+
 <?php printfooter();?>
 </body>
 </html>

@@ -60,6 +60,7 @@ else{
       $('#filters').on('click', '.list-group-item', function(e) {
         var $this = $(this);
         var $alias = $this.data('alias');
+        alert("hello");
         $("#applied-filters ul").append('<li>'+$alias+'<i class="fa fa-times-circle-o" aria-hidden="true" onclick="removeFilter(this)"></i></li>');
 
 });

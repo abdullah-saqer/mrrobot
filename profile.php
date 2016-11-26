@@ -56,7 +56,21 @@ require("functions/engine.php");
 		</div>
 		<div id="panel1" class="panel-collapse collapse">
 			<div class="panel-body">
-                Contents panel 1
+                <label class="col-sm-2 control-label" for="input-firstname">First Name</label>
+                <p class="col-sm-10 " for="input-firstname">First Name here</p>
+          
+          
+            <label class="col-sm-2 control-label" for="input-lastname">Last Name</label>
+            <p class="col-sm-10 " for="input-firstname">Last Name here</p>
+          
+          
+            <label class="col-sm-2 control-label" for="input-email">E-Mail</label>
+            <p class="col-sm-10 " for="input-firstname">email@domain.com</p>
+          
+      
+            <label class="col-sm-2 control-label" for="input-telephone">Telephone</label>
+            <p class="col-sm-10 " for="input-firstname">07#/#######</p>
+          </div> 
 			</div>
 		</div>
     </div>
@@ -307,7 +321,8 @@ require("functions/engine.php");
 <!--end wishlist div-->
 <!--start setting div-->
 <div id="setting" class="tabcontent">
- <div class="panel-group" id="accordion">
+<div class="row">
+<div class="col-sm-12">
   <div class="panel panel-default">
     <div class="panel-heading">
       <h4 class="panel-title">
@@ -358,6 +373,8 @@ require("functions/engine.php");
       </div>
     </div>
     </div>
+
+    
   <div class="panel panel-default">
     <div class="panel-heading">
       <h4 class="panel-title">
@@ -409,8 +426,8 @@ require("functions/engine.php");
           </div>
                 
       </div>
-    </div>
-    </div>
+        </div>
+        </div>
     <div class="panel panel-default">
     <div class="panel-heading">
       <h4 class="panel-title">
@@ -484,11 +501,16 @@ require("functions/engine.php");
     </div>
     </div>
   
-</div>
-</div>
 
-		</div>
-	</div>
+</div>
+</div>
+<!--end setting div-->
+    
+    
+ 
+
+</div>
+</div>
 </div>
 
 
@@ -496,3 +518,4 @@ require("functions/engine.php");
 
 </body>
 </html>
+

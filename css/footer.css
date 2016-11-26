@@ -18,15 +18,15 @@ footer {
     /* display: block; */
     
 }
-#mrrobot-logo{
+#mrrobot-logo{/*
     position: relative;
-    top:-5px;
+    top:-5px;*/
 
 }
 footer a{
-    text-decoration: none;
+   /* text-decoration: none;
     color:#ccc;
-    font-size: 18px;
+ */   font-size: 18px;
 }
 footer a:hover{
     text-decoration: none;

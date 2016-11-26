@@ -37,7 +37,7 @@ header{
 #filters-content{
 	margin-top: 15px;
 }
-#menu span {
+#menu .dropdown-span{
     float: left;
     padding-left: 15px;
     font-size: 16px;
@@ -210,5 +210,8 @@ header{
     .img-responsive{
         height: 190px !important;
     }
+    #search input,button{
+    height: 36px;
+}
 }
 

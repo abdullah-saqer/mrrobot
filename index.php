@@ -17,6 +17,7 @@ require("functions/engine.php");
 <link href="javascript/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
 <script src="javascript/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
 <link href="//fonts.googleapis.com/css?family=Open+Sans:400,400i,300,700" rel="stylesheet" type="text/css">
+<script src="javascript/navbar.js" type="text/javascript"></script>
 
 
 <link href="javascript/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
@@ -46,9 +47,9 @@ require("functions/engine.php");
 
 <header>
 	<!--<a href="#" id="back-to-top" title="Back to top">&uarr;</a>-->
-  <div class="scroll_to_top">
+  <div class="scroll_to_top" style="display: block;">
         <span id="up_arrow" class="glyphicon glyphicon-menu-up">
-      </div>
+      </span></div>
 
    <div class="row">
       <div class="col-sm-4">
@@ -73,6 +74,74 @@ require("functions/engine.php");
 </div>
 </div>
     </div>
+    <!--button-->
+    <div id="fix">
+    <ul class="nav nav-stacked">
+    <li>
+        <div class="btn-group "> <a class="btn btn-primary dropdown-toggle open " data-toggle="dropdown" data-hover="dropdown" href="#">
+        shop By Category
+      </a>
+
+            <ul class="dropdown-menu " id="cat" data-hover="dropdown">
+            <ul class="list-inline " >
+                
+                <!--test-->
+              <li id="Laptop"  class="dropdown-submenu" data-hover="dropdown">
+                <a  href="#">Laptop</a>
+                <ul class="dropdown-menu">
+                  <li><a tabindex="-1" href="#">Apple</a></li>
+                  <li><a href="#">HP</a></li>
+                  <li><a href="#">Toshiba</a></li>
+                </ul>
+              </li>
+                <!--test-->
+
+                <li id="Mobile"  class="dropdown-submenu">
+                <a  href="#">Mobile</a>
+                <ul class="dropdown-menu" >
+                  <li><a tabindex="-1" href="gg">Apple</a></li>
+                  <li><a href="#">Samsung</a></li>
+                  <li><a href="#">LG</a></li>
+                </ul>
+              </li>
+                <li id="Desktop"  class="dropdown-submenu">
+                <a  href="#">Desktop</a>
+                <ul class="dropdown-menu" >
+                  <li><a tabindex="-1" href="samer">HP</a></li>
+                  <li><a href="#">Samsung</a></li>
+                  <li><a href="#">ASUS</a></li>
+                </ul>
+              </li>
+                
+
+               
+            </ul>
+            </ul>
+
+        </div>
+    </li>
+    <!--shop by store-->
+    <li>
+        <div class="btn-group "> <a id="shopbtn" class="btn btn-primary dropdown-toggle" data-hover="dropdown" data-toggle="dropdown" href="#">
+        Shop By store
+        <i class="icon icon-caret-right"></i>
+      </a>
+
+            <ul class="dropdown-menu" id="store">
+            <ul class="list-inline" >
+                <li><a href="#">Platinum</a></li>
+                <li><a href="#">MRROBOT</a></li>
+                <li><a href="#">Computer Center</a></li>
+               
+                <li><a href="#">#100</a></li>
+                </ul>
+            </ul>
+        </div>
+    </li>
+
+</ul>
+</div>
+<!--button-->
 
 <hr>
 </header>

@@ -28,9 +28,9 @@ function printNavBar(){
 function printfooter(){
 echo'
 <footer>
-
+<div class="container">
 <div class="row">
-<div class="col-sm-4">
+<div class="col-lg-4">
 <h5>Information</h5>
  <ul class="list-unstyled">
      <li><a href="#">About Us</a></li>
@@ -39,7 +39,7 @@ echo'
   <li><a href="#">Terms &amp; Conditions</a></li>
  </ul>
 </div>
-<div class="col-sm-4">
+<div class="col-md-4">
 <h5>Custumer Service</h5>
  <ul class="list-unstyled">
    <li><a href="#">Contact Us</a></li>
@@ -47,7 +47,7 @@ echo'
    <li><a href="#">Site Map</a></li>
  </ul>
 </div>
-<div class="col-sm-4">
+<div class="col-md-4">
 <h5>My account</h5>
 <ul class="list-unstyled">
           <li><a href="/mrrobot/profile.php">My Account</a></li>
@@ -62,7 +62,7 @@ echo'
 <p>Powered By : <a href="#"><img class="logo" src="images//mrrobotLogo.svg"/></a><br></p>
 </div>
 <span style="text-align=center;"> MR ROBOT © 2016</span>
-
+</div>
 </footer>
 ';
 }

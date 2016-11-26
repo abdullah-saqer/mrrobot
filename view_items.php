@@ -12,6 +12,8 @@ require("functions/engine.php");
 <link rel="stylesheet" type="text/css" href="css/footer.css">
 <link rel="stylesheet" type="text/css" href="css/index.css">
 <link rel="stylesheet" type="text/css" href="css/viewitems.css">
+<script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+ crossorigin="anonymous"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="javascript/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
 <script src="javascript/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
@@ -21,6 +23,7 @@ require("functions/engine.php");
 <!-- price silder-->
 <link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
 <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+<script src="javascript/navbar.js" type="text/javascript"></script>
 <title>View Items</title>
 
 </head>
@@ -29,6 +32,9 @@ require("functions/engine.php");
 <?php printNavBar();?>  
 </header>
 <div class="container">
+<div class="scroll_to_top" style="display: block;">
+        <span id="up_arrow" class="glyphicon glyphicon-menu-up">
+      </span></div>
 <ul class="breadcrumb">
         <li><a href="/mrrobot"><i class="fa fa-home"></i></a></li>
         <li><a href="#">View Items</a></li>
@@ -37,7 +43,7 @@ require("functions/engine.php");
          <div class="row" id="filters">
          <div class="col-xs-12 visible-xs" >
         <nav id="menu" class="navbar">
-    <div class="navbar-header"><span id="category">Categories</span>
+    <div class="navbar-header"><span class="dropdown-span" id="category">Categories</span>
       <button type="button" class="btn btn-navbar navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse"><i class="fa fa-bars"></i></button>
     </div>
       <div class="navbar-collapse navbar-ex1-collapse collapse " >
@@ -52,7 +58,7 @@ require("functions/engine.php");
     </div>
        <div class="col-xs-12 visible-xs">
         <nav id="menu" class="navbar">
-    <div class="navbar-header"><span id="brand">Brands</span>
+    <div class="navbar-header"><span class="dropdown-span" id="brand">Brands</span>
       <button type="button" class="btn btn-navbar navbar-toggle" data-toggle="collapse" data-target=".navbar-ex2-collapse"><i class="fa fa-bars"></i></button>
     </div>
       <div class="navbar-collapse navbar-ex2-collapse collapse " >
@@ -67,7 +73,7 @@ require("functions/engine.php");
     </div>
      <div class="col-xs-12 visible-xs">
         <nav id="menu" class="navbar">
-    <div class="navbar-header"><span id="more-filter">More Filters</span>
+    <div class="navbar-header"><span class="dropdown-span" id="more-filter">More Filters</span>
       <button type="button" class="btn btn-navbar navbar-toggle" data-toggle="collapse" data-target=".navbar-ex3-collapse"><i class="fa fa-bars"></i></button>
     </div>
       <div class="navbar-collapse navbar-ex3-collapse collapse " >
@@ -83,7 +89,7 @@ require("functions/engine.php");
     </div>
      <div class="col-xs-12 visible-xs">
         <nav id="menu" class="navbar">
-    <div class="navbar-header"><span id="price-filter">Price Filter</span>
+    <div class="navbar-header"><span class="dropdown-span" id="price-filter">Price Filter</span>
       <button type="button" class="btn btn-navbar navbar-toggle" data-toggle="collapse" data-target=".navbar-ex4-collapse"><i class="fa fa-bars"></i></button>
     </div>
       <div class="navbar-collapse navbar-ex4-collapse collapse " id="price-xs">
@@ -246,8 +252,8 @@ require("functions/engine.php");
         </div>
         
      
-
 </div>
+
 </div>
 
 <?php printfooter();?>

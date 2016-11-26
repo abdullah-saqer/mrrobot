@@ -19,12 +19,16 @@ require("functions/engine.php");
 <link href="//fonts.googleapis.com/css?family=Open+Sans:400,400i,300,700" rel="stylesheet" type="text/css">
 <link href="javascript/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 <script src='https://www.google.com/recaptcha/api.js'></script>
+<script src="javascript/navbar.js" type="text/javascript"></script>
 
 	<title>Registration</title>
 </head>
 <body>
 <?php printNavBar(); ?>
 <div class="container">
+<div class="scroll_to_top" style="display: block;">
+        <span id="up_arrow" class="glyphicon glyphicon-menu-up">
+      </span></div>
 <ul class="breadcrumb">
         <li><a href="/mrrobot"><i class="fa fa-home"></i></a></li>
         <li><a href="#">Register</a></li>

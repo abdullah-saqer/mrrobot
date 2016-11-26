@@ -1,11 +1,12 @@
-$( document ).ready(function() {
+$( document ).ready(function(event) {
 var tabid = getUrlVars()["id"];
 if(typeof tabid == "undefined")
 {
-    openTab(event,"information");
+    /*$("#defaultOpen").click();*/
+    $('#information').css('display','block');
 }
 else{
-    openTab(event,tabid);
+    $('#'+tabid).css('display','block');
 
 }
 $('.header').click(function(){
@@ -15,7 +16,7 @@ $('.header').click(function(){
 function openTab(evt, tabName) {
     // Declare all variables
     var i, tabcontent, tablinks;
-    console.log(evt.currentTarget.className);
+    
 
     // Get all elements with class="tabcontent" and hide them
     tabcontent = document.getElementsByClassName("tabcontent");

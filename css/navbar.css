@@ -95,3 +95,36 @@
     -o-transform: rotate(-45deg);
     transform: rotate(-45deg);
 }
+/*scroll to top */
+  .scroll_to_top{
+      left:90%;
+}
+
+.scroll_to_top{
+  width: 35px;
+  height: 35px;
+  border:1px solid rgba(0,0,0,0.2);
+  position: fixed;
+  left:95%;
+  top:90%;
+  border-radius: 3px;
+  background-color: white;
+  transition:background-color 0.7s;
+  display: none;
+  z-index: 100;
+}
+.scroll_to_top:hover{
+  border:0px solid rgba(0,0,0,0.2);
+  cursor: pointer;
+  background-color: #ff3333;
+}
+.scroll_to_top:hover #up_arrow{
+  color:rgba(255,255,255,0.7);
+}
+#up_arrow{
+  position: relative;
+  top:3px;
+  font-size: 30px;
+  z-index: 100;
+  left:2px;
+}

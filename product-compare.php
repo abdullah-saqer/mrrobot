@@ -25,6 +25,12 @@ require("functions/engine.php");
 <header>
 	<?php printNavBar();?>
 </header>
+<div class="container">
+<ul class="breadcrumb">
+        <li><a href="/mrrobot"><i class="fa fa-home"></i></a></li>
+        <li><a href="#">Compare Product</a></li>
+      </ul>
+      </div>
 	<section class="cd-intro">
 		<h1>Products Comparison By MrRobot</h1>
 	</section> <!-- .cd-intro -->

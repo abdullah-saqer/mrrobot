@@ -8,6 +8,9 @@ else{
     openTab(event,tabid);
 
 }
+$('.header').click(function(){
+     $(this).toggleClass('expand').nextUntil('tr.header').slideToggle(100);
+     });
 });
 function openTab(evt, tabName) {
     // Declare all variables
@@ -39,3 +42,31 @@ vars[key] = value;
 });
 return vars;
 }
+
+
+
+
+
+
+/*
+$(document).ready(function() {
+
+    function getChildren($row) {
+        var children = [];
+        while($row.next().hasClass('child')) {
+             children.push($row.next());
+             $row = $row.next();
+        }            
+        return children;
+    }        
+
+    $('.parent').on('click', function() {
+    
+        var children = getChildren($(this));
+        $.each(children, function() {
+            $(this).toggle();
+        })
+    });
+    
+});
+*/

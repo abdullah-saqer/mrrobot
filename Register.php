@@ -139,7 +139,7 @@ require("functions/engine.php");
                         <div class="buttons">
           <div class="pull-right">I have read and agree to the <a href="/Mrrobot/privacypolicy.htm" target="_blank" class="agree"><b>Privacy Policy</b></a>                        <input type="checkbox" name="agree" value="1" />
                         &nbsp;
-            <input type="submit" value="Continue" class="btn btn-primary" />
+            <input type="submit" value="Update" class="btn btn-primary" />
           </div>
         </div>
               </form>

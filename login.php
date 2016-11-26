@@ -98,7 +98,7 @@ require("functions/engine.php");
 	
 	</div>
 	</div>
-	</div>
+	
 
 
 
@@ -107,6 +107,6 @@ require("functions/engine.php");
 
 
 <?php printfooter();?>
-
+</div>
 </body>
 </html>

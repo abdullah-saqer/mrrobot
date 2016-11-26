@@ -23,7 +23,7 @@ require("functions/engine.php");
 <title>Profile</title>
 
 </head>
-<body id="profile">
+<body id="profile" class="noselect">
 <header>
 <?php printNavBar();?>	
 </header>
@@ -80,7 +80,7 @@ require("functions/engine.php");
 <div id="orders" class="tabcontent">
   <div class=row >
 
-<div id="order-details" class="col-sm-5">
+<div id="order-details" class="col-sm-6 col-sm-offset-3">
 <table class="table table-bordered table-hover table-responsive">
 <h4>Order Details</h4>
           <tr>
@@ -88,32 +88,24 @@ require("functions/engine.php");
               <th class="">Status</th>
               <th class="">Total</th>
           </tr>
-          <tr>
+          <tr class="header expand">
             <td class="text-center">15567</td>
                 <td class="text-center">Received</td>
-                <td class="text-center">600 JD</td>
+                <td class="text-center">600 JD<span class="sign"></span></td>
          </tr>
-          <tr>
-            <td class="text-center">15569</td>
-                <td class="text-center">On Delivery</td>
-                <td class="text-center">700 JD</td>
-         </tr>
-                      </table>
-</div>
-<div id="order-items" class="col-sm-6 col-sm-offset-1 ">
+         <!--orderd items-->
+         <tr style="display: none;">
+         <td colspan="3" id="itemstable" >
+         <table class="table table-bordered" id="inner-table"  >
+         <tr>
 
-  <h4>Order Items</h4>
-<div class="table-responsive">
-<table class="table table-bordered ">
-
-          <tr>
               <th>Item ID</th>
               <th>Name</th>
               <th>Brand</th>
               <th>Quantity</th>
               <th>Price</th>
           </tr>
-          <tr>
+            <tr>
             <td >1</td>
                 <td >Iphone 7 64GB</td>
                 <td >Apple</td>
@@ -128,11 +120,47 @@ require("functions/engine.php");
                 <td>1</td>
                 <td>500JD</td>
           </tr>
-         
-                      </table>
-                      </div>
+          </table>
+          </td>
+          </tr>
+          <tr class="header expand">
+            <td class="text-center">15569</td>
+                <td class="text-center">On Delivery</td>
+                <td class="text-center">700 JD<span class="sign"></span></td>
+                <span class="sign"></span>
+         </tr>
+         <tr style="display: none;">
+         <td colspan="3" id="itemstable">
+         <table class="table table-bordered" id="inner-table" >
+         <tr>
 
+              <th>Item ID</th>
+              <th>Name</th>
+              <th>Brand</th>
+              <th>Quantity</th>
+              <th>Price</th>
+          </tr>
+            <tr>
+            <td >1</td>
+                <td >Iphone 7 64GB</td>
+                <td >Apple</td>
+                <td>2</td>
+                <td>600JD</td>
+
+          </tr>
+          <tr>
+              <td >2</td>
+                <td >Samsung S7</td>
+                <td >Samsung</td>
+                <td>1</td>
+                <td>500JD</td>
+          </tr>
+          </table>
+          </td>
+          </tr>
+                      </table>
 </div>
+
 </div>
 
 </div>
@@ -141,33 +169,23 @@ require("functions/engine.php");
 <div id="history" class="tabcontent">
   <div class=row>
 
-<div id="order-details" class="col-sm-5">
+<div id="order-details" class="col-sm-6 col-sm-offset-3">
 <table class="table table-bordered table-hover table-responsive">
-<h4>Order Details</h4>
+<h4>Order History</h4>
           <tr>
               <th class="">Order ID</th>
               <th class="">Delivery Date</th>
               <th class="">Total</th>
           </tr>
-          <tr>
+          <tr class="header expand">
             <td class="text-center">15567</td>
                 <td class="text-center">11-May-2016</td>
-                <td class="text-center">600 JD</td>
+                <td class="text-center">600 JD <span class="sign"></span></td>
          </tr>
-          <tr>
-            <td class="text-center">15569</td>
-                <td class="text-center">19-Dec-2016</td>
-                <td class="text-center">700 JD</td>
-         </tr>
-                      </table>
-</div>
-<div id="order-items" class="col-sm-6 col-sm-offset-1 ">
-
-  <h4>Order Items</h4>
-<div class="table-responsive">
-<table class="table table-bordered ">
-
-          <tr>
+         <tr style="display: none;">
+         <td colspan="3" id="itemstable">
+         <table class="table table-bordered" id="inner-table">
+         <tr>
               <th>Item ID</th>
               <th>Name</th>
               <th>Brand</th>
@@ -190,24 +208,285 @@ require("functions/engine.php");
                 <td>500JD</td>
           </tr>
          
-                      </table>
-                      </div>
+           
+         </table>
+         </td>
+         </tr>
+          <tr class="header expand">
+            <td class="text-center">15569</td>
+                <td class="text-center">19-Dec-2016</td>
+                <td class="text-center">700 JD <span class="sign"></span></td>
+         </tr>
+          <tr style="display: none;">
+         <td colspan="3" id="itemstable">
+         <table class="table table-bordered" id="inner-table">
+         <tr>
+              <th>Item ID</th>
+              <th>Name</th>
+              <th>Brand</th>
+              <th>Quantity</th>
+              <th>Price</th>
+          </tr>
+          <tr>
+            <td >1</td>
+                <td >Iphone 7 64GB</td>
+                <td >Apple</td>
+                <td>2</td>
+                <td>600JD</td>
 
+          </tr>
+          <tr>
+              <td >2</td>
+                <td >Samsung S7</td>
+                <td >Samsung</td>
+                <td>1</td>
+                <td>500JD</td>
+          </tr>
+         
+           
+         </table>
+         </td>
+         </tr>
+                      </table>
 </div>
+
 </div>
 </div>
 
 <!--end history div-->
 <!-- start wishlist div-->
 <div id="wishlist" class="tabcontent">
-  <h3>My Wishlist</h3>
-  <p>table of items in wishlist</p>
-</div>
-<div id="setting" class="tabcontent">
-  <h3>Settings</h3>
-  <p>panel-collapse to change settings here</p>
+  <div class="row">
+  <div id="wishlist" class="col-sm-6 col-sm-offset-3">
+<table class="table table-bordered  table-responsive">
+  <h4>My Wishlist</h4>
+  <tr>
+    
+              <th>Item ID</th>
+              <th>Name</th>
+              <th>Brand</th>
+              <th>Price</th>
+              <th id="action-btn">Action</th>
+        
+          </tr>
+           <tr  class="discount">
+            <td >1</td>
+                <td >Iphone 7 64GB</td>
+                <td >Apple</td>
+                <td>600JD</td>
+                <td id="action-btn"><button type="button" class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i></button></td>
+
+          </tr>
+          <tr class="out-of-stock">
+              <td >2</td>
+                <td >Samsung S7</td>
+                <td >Samsung</td>
+                <td>500JD</td>
+                <td id="action-btn"><button type="button" class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i></button></td>
+          </tr>
+          <tr>
+              <td >2</td>
+                <td >Samsung Note 5</td>
+                <td >Samsung</td>
+                <td>550JD</td>
+                <td id="action-btn"><button type="button" class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i></button></td>
+          </tr>
+         
+
+  </table>
+  <div class="col-sm-6 col-sm-offset-3" style="display: inline-block;">
+  <label ><i class="fa fa-circle discount-icon" aria-hidden="true"></i> Discount Available</label>
+  <label><i class="fa fa-circle out-of-stock-icon" aria-hidden="true"></i> Out Of Stock</label>
+  </div>
+  </div>
+
+  </div>
+ 
+  
 </div>
 <!--end wishlist div-->
+<!--start setting div-->
+<div id="setting" class="tabcontent">
+ <div class="panel-group" id="accordion">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+                <a  tabindex="-1" class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#panel3">Change Personal Details</a>
+      </h4>
+    </div>
+    <div id="panel3" class="panel-collapse collapse ">
+      <div class="panel-body ">
+      <div class="row">
+      <form action="#" method="post"  class="form-horizontal">
+        
+          
+          <div class="form-group required">
+            <label class="col-sm-2 control-label" for="input-firstname">First Name</label>
+            <div class="col-sm-5">
+              <input type="text" name="firstname" value="" placeholder="First Name" id="input-firstname" class="form-control" />
+                          </div>
+          </div>
+          <div class="form-group required">
+            <label class="col-sm-2 control-label" for="input-lastname">Last Name</label>
+            <div class="col-sm-5">
+              <input type="text" name="lastname" value="" placeholder="Last Name" id="input-lastname" class="form-control" />
+                          </div>
+          </div>
+          <div class="form-group required">
+            <label class="col-sm-2 control-label" for="input-email">E-Mail</label>
+            <div class="col-sm-5">
+              <input type="email" name="email" value="" placeholder="E-Mail" id="input-email" class="form-control" />
+                          </div>
+          </div>
+          <div class="form-group required">
+            <label class="col-sm-2 control-label" for="input-telephone">Telephone</label>
+            <div class="col-sm-5">
+              <input type="tel" name="telephone" value="" placeholder="Telephone" id="input-telephone" class="form-control" />
+                          </div>
+          </div>
+          <div class="buttons">
+          <div class="pull-right">
+            <input type="submit" value="Update" class="btn btn-primary" />
+          </div>
+        </div>
+                
+                  </form>
+                  </div>
+                  
+        
+     
+      </div>
+    </div>
+    </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+                <a tabindex="-1" class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#panel4">Change Address</a>
+      </h4>
+    </div>
+    <div id="panel4" class="panel-collapse collapse">
+      <div class="panel-body">
+               <div class="row">
+      <form action="#" method="post"  class="form-horizontal">
+      <div class="form-group required">
+            <label class="col-sm-2 control-label" for="input-address-1">Address 1</label>
+            <div class="col-sm-5">
+              <input type="text" name="address_1" value="" placeholder="Address 1" id="input-address-1" class="form-control" />
+                          </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label" for="input-address-2">Address 2</label>
+            <div class="col-sm-5">
+              <input type="text" name="address_2" value="" placeholder="Address 2" id="input-address-2" class="form-control" />
+            </div>
+          </div>
+          <div class="form-group">
+           <label class="col-sm-2 control-label">City</label>
+            <div class="col-sm-5">
+              <select name="city_id" id="input-city" class="form-control">
+                      <option value=""> --- Please Select --- </option>
+                      <option value="1">Ajloon</option>
+                      <option value="2">Amman</option>
+                      <option value="3">Aqaba</option>
+                      <option value="4">Balqa</option>
+                      <option value="5">Irbid</option>
+                      <option value="6">Jerash</option>
+                      <option value="7">Karak</option>
+                      <option value="8">Ma'An</option>
+                      <option value="9">Madaba</option>
+                      <option value="10">Mafraq</option>
+                      <option value="11">Tafileh</option>
+                      <option value="12">Zarqa</option>
+              </select>
+            </div>
+            </div>
+          <div class="buttons">
+          <div class="pull-right">
+            <input type="submit" value="Update" class="btn btn-primary" />
+          </div>
+        </div>
+          </form>
+          </div>
+                
+      </div>
+    </div>
+    </div>
+    <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+                <a tabindex="-1" class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#panel5">Change password</a>
+      </h4>
+    </div>
+    <div id="panel5" class="panel-collapse collapse">
+      <div class="panel-body">
+                 <div class="row">
+      <form action="#" method="post"  class="form-horizontal">
+      <div class="form-group required">
+            <label class="col-sm-2 control-label" for="input-password">Old Password</label>
+            <div class="col-sm-5">
+              <input type="password" name="password" value="" placeholder="Password" id="input-old-password" class="form-control" />
+                          </div>
+          </div>
+    <div class="form-group required">
+            <label class="col-sm-2 control-label" for="input-password">New Password</label>
+            <div class="col-sm-5">
+              <input type="password" name="password" value="" placeholder="Password" id="input-new-password" class="form-control" />
+                          </div>
+          </div>
+          <div class="form-group required">
+            <label class="col-sm-2 control-label" for="input-confirm">Password Confirm</label>
+            <div class="col-sm-5">
+              <input type="password" name="confirm" value="" placeholder="Password Confirm" id="input-confirm" class="form-control" />
+                          </div>
+          </div>
+        
+          <div class="buttons">
+          <div class="pull-right">
+            <input type="submit" value="Update" class="btn btn-primary" />
+          </div>
+        </div>
+          </form>
+          </div>
+      </div>
+    </div>
+    </div>
+    <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+                <a tabindex="-1" class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#panel6">Newsletter
+</a>
+      </h4>
+    </div>
+    <div id="panel6" class="panel-collapse collapse">
+      <div class="panel-body">
+           <div class="row">
+      <form action="#" method="post"  class="form-horizontal">
+      <div class="form-group">
+            <label class="col-sm-2 control-label">Subscribe</label>
+            <div class="col-sm-5">
+                            <label class="radio-inline">
+                <input type="radio" name="newsletter" value="1" checked="checked"/>
+                Yes</label>
+              <label class="radio-inline">
+                <input type="radio" name="newsletter" value="0"  />
+                No</label>
+            </div>
+            </div>
+        
+          <div class="buttons">
+          <div class="pull-right">
+            <input type="submit" value="Update" class="btn btn-primary" />
+          </div>
+        </div>
+          </form>
+          </div>
+      </div>
+    </div>
+    </div>
+  
+</div>
+</div>
+
 		</div>
 	</div>
 </div>

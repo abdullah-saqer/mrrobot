@@ -1,0 +1,79 @@
+body{
+	font-family: 'Open Sans', sans-serif !important;
+    font-weight: 400 !important;
+    color: #666 !important;
+    font-size: 12px !important;
+    line-height: 20px !important;
+    width: 100% !important;
+    margin: 0px !important;
+    padding: 0px !important;
+    
+}
+.thumbnails{
+	margin-left: -20px;
+	overflow:auto;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    height: 282px;
+}
+.thumbnails .image-additional {
+    float: left;
+    margin-left: 20px;
+}
+
+
+.image-additional {
+    max-width: 78px;
+}
+.thumbnail{
+	    max-width: 750px;
+}
+.input-group{
+	width:125px;
+}
+#button-cart{
+	    max-width: 180px;
+
+}
+.btn-group button{
+	color: #444;
+    background-color: #ddd;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/*360 view*/
+#left-rotate{
+    margin: 250px 0px 0px 5px;
+    width: 48px;
+  float:left;
+}
+#right-rotate{
+    margin: 250px 0px 0px 0px;
+    width: 48px;
+  float:left;
+}
+#slideshow{
+float:left;
+}
+
+#slide-info{
+float:left;
+margin: 457px 0px 0px -395px;
+font-size:16px;
+}
+
+.arrows {
+   content:url("360photo//left-right-arrows.png");
+   width:40px;
+   position: absolute ;
+   margin-top: -1px;  
+}​
+.modal-body{
+  margin-left: 30px;
+}
+.nav-tabs{
+  margin-bottom: 8px !important;
+}
+/*360 view*/

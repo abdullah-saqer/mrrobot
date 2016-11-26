@@ -43,7 +43,68 @@ ul.tab li a:focus, .active {background-color: #ccc;}
 #content{
     height: 240px !important;
 }
+.header .sign:after{
+  font-family: FontAwesome;
+  content: "\f068";
+  position: relative;
+      left: 20px;
+    color: red;
+    font-size: 17px;     
+}
+.header.expand .sign:after{
+   font-family: FontAwesome;
+  content: "\f067";
+ }
+ 
+ #itemstable table, tr, td, th
+{
+    border: 1px solid black;
+    border-collapse:collapse;
+}
+ #itemstable {
+    padding: 0px;
+ }
+tr.header
+{
+    cursor:pointer;
+}
+#inner-table{
+    margin: 0px;
+}
+.discount{
+   background-color: #b8fcb8; 
+}
+.discount-icon {
+    color:#b8fcb8;
 
+}
+.out-of-stock{
+    background-color: #f78c8c;
+}
+.out-of-stock-icon{
+    color:#f78c8c;
+}
+#wishlist tr
+{
+    cursor:pointer;
+    font-weight: 600;
+}
+#action-btn{
+    background-color: white;
+    width: 1px;
+}
+.buttons{
+    padding-right: 50px;
+}
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Chrome/Safari/Opera */
+     -khtml-user-select: none; /* Konqueror */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  not supported by any browser */
+}
 @-webkit-keyframes fadeEffect {
     from {opacity: 0;}
     to {opacity: 1;}

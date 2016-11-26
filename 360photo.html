@@ -1,0 +1,128 @@
+<html>
+<head>
+
+</head>
+<style>
+#left-rotate{
+    margin: 250px 0px 0px 5px;
+    width: 48px;
+	float:left;
+}
+#right-rotate{
+    margin: 250px 0px 0px 0px;
+    width: 48px;
+	float:left;
+}
+#slideshow{
+float:left;
+}
+
+#slide-info{
+float:left;
+margin: 457px 0px 0px -395px;
+font-size:16px;
+}
+
+.arrows {
+   content:url("360photo//left-right-arrows.png");
+   width:40px;
+   position: absolute ;
+   margin-top: -1px;
+
+   
+}​
+#imgClickAndChange{
+
+}
+
+
+</style>
+<script>
+
+
+ var imgs = [
+ "360photo//Iphone7//Apple-iPhone-7-360-0.jpg",
+ "360photo//Iphone7//Apple-iPhone-7-360-35.jpg",
+"360photo//Iphone7//Apple-iPhone-7-360-34.jpg", 
+"360photo//Iphone7//Apple-iPhone-7-360-33.jpg",
+"360photo//Iphone7//Apple-iPhone-7-360-32.jpg",
+ "360photo//Iphone7//Apple-iPhone-7-360-31.jpg",
+ "360photo//Iphone7//Apple-iPhone-7-360-30.jpg",
+ "360photo//Iphone7//Apple-iPhone-7-360-29.jpg",
+ "360photo//Iphone7//Apple-iPhone-7-360-28.jpg",
+ "360photo//Iphone7//Apple-iPhone-7-360-27.jpg",
+ "360photo//Iphone7//Apple-iPhone-7-360-26.jpg",
+ "360photo//Iphone7//Apple-iPhone-7-360-25.jpg",
+ "360photo//Iphone7//Apple-iPhone-7-360-24.jpg",
+ "360photo//Iphone7//Apple-iPhone-7-360-23.jpg",
+ "360photo//Iphone7//Apple-iPhone-7-360-22.jpg",
+ "360photo//Iphone7//Apple-iPhone-7-360-21.jpg",
+ "360photo//Iphone7//Apple-iPhone-7-360-20.jpg",
+ "360photo//Iphone7//Apple-iPhone-7-360-19.jpg",
+ "360photo//Iphone7//Apple-iPhone-7-360-18.jpg",
+ "360photo//Iphone7//Apple-iPhone-7-360-17.jpg",
+ "360photo//Iphone7//Apple-iPhone-7-360-16.jpg", 
+ "360photo//Iphone7//Apple-iPhone-7-360-15.jpg",
+ "360photo//Iphone7//Apple-iPhone-7-360-14.jpg",
+ "360photo//Iphone7//Apple-iPhone-7-360-13.jpg",
+ "360photo//Iphone7//Apple-iPhone-7-360-12.jpg",
+ "360photo//Iphone7//Apple-iPhone-7-360-11.jpg",
+ "360photo//Iphone7//Apple-iPhone-7-360-10.jpg",
+ "360photo//Iphone7//Apple-iPhone-7-360-9.jpg", 
+ "360photo//Iphone7//Apple-iPhone-7-360-8.jpg",
+ "360photo//Iphone7//Apple-iPhone-7-360-7.jpg",
+"360photo//Iphone7//Apple-iPhone-7-360-6.jpg",
+"360photo//Iphone7//Apple-iPhone-7-360-5.jpg",  
+ "360photo//Iphone7//Apple-iPhone-7-360-4.jpg",
+"360photo//Iphone7//Apple-iPhone-7-360-3.jpg",
+"360photo//Iphone7//Apple-iPhone-7-360-2.jpg",
+"360photo//Iphone7//Apple-iPhone-7-360-1.jpg"];
+
+   
+
+
+ var index=0;
+ function changeImage(dir) {
+    	index+=dir;
+    	if(index>=imgs.length )
+    		index=0;
+    	if(index<0)
+    		index=imgs.length-1;
+			var img = document.getElementById("imgClickAndChange");
+			img.src=imgs[index];
+   	//	$('#slideshow').css({background : 'url('+imgs[index]+')  no-repeat'});
+		
+  }
+
+    document.onkeydown = function(e) {
+        e = e || window.event;
+        if (e.keyCode == '37') {
+            changeImage(1) //left <- show Prev image
+        } else if (e.keyCode == '39') {
+            // right -> show next image
+            changeImage(-1)
+        }
+    }
+   
+</script>
+<body >
+<div style="display:inline-block;overflow:hidden;">
+	<div id=left-rotate >
+	<img src="https://maxcdn.icons8.com/Color/PNG/48/Editing/rotate_left-48.png" title="Rotate Left"  onclick="changeImage(-1)">
+    </div>
+	
+        <div id="slideshow">
+        <img alt="slideshow" src="360photo//Iphone7//Apple-iPhone-7-360-0.jpg" id="imgClickAndChange" height="479px" onclick="changeImage(1)" />
+    
+	</div>
+	<div id="right-rotate" >
+	<img src="https://maxcdn.icons8.com/Color/PNG/48/Editing/rotate_right-48.png" title="Rotate Left"  onclick="changeImage(1)">
+    </div>
+	
+	<div id="slide-info">
+	<p>Use the keyboard arrows<span class="arrows" ></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;to rotate the phone.</p>
+	</div>
+	</div>
+</div>
+</body>
+</html>

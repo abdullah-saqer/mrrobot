@@ -6,6 +6,7 @@ $(document).ready(function(event){
   navigation: true,
   navigationText: ['<i class="fa fa-chevron-left fa-5x"></i>', '<i class="fa fa-chevron-right fa-5x"></i>'],
   pagination: true
+
 });
   $('#zoom_02').elevateZoom({
     zoomType: "inner",
@@ -13,6 +14,7 @@ cursor: "crosshair",
 zoomWindowFadeIn: 500,
 zoomWindowFadeOut: 750
    }); 
+  
   $('#slideshow1').owlCarousel({
     loop:true,
     

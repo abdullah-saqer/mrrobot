@@ -16,12 +16,9 @@ function printNavBar(){
       <ul class="list-inline">
         <li><a href="#"><i class="fa fa-phone"></i></a> <span class="hidden-xs hidden-sm hidden-md">123456789</span></li>
         <li class="dropdown"><a id="ua" href="#" title="My Account" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <span class="hidden-xs hidden-sm hidden-md">My Account</span> <span class="caret"></span></a>
-          <ul class="dropdown-menu dropdown-menu-right">
-                        <li><a href="/Mrrobot/register.php">Register</a></li>
-            <li><a href="/mrrobot/login.php">Login</a></li>
-                      </ul>
+          '.printAccountMenu().'
         </li>
-        <li><a href="#" id="wishlist-total" title="Wish List (0)"><i class="fa fa-heart"></i> <span class="hidden-xs hidden-sm hidden-md">Wish List (0)</span></a></li>
+        <li><a href="/mrrobot/profile.php?id=wishlist" id="wishlist-total" title="Wish List (0)"><i class="fa fa-heart"></i> <span class="hidden-xs hidden-sm hidden-md">Wish List (0)</span></a></li>
         <li><a href="#" title="Shopping Cart"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md">Shopping Cart</span></a></li>
         <li><a href="#" title="Checkout"><i class="fa fa-share"></i> <span class="hidden-xs hidden-sm hidden-md">Checkout</span></a></li>
       </ul>
@@ -29,8 +26,9 @@ function printNavBar(){
   </nav>';
 }
 function printfooter(){
-echo'<footer>
-<div class="container">
+echo'
+<footer>
+
 <div class="row">
 <div class="col-sm-4">
 <h5>Information</h5>
@@ -57,17 +55,20 @@ echo'<footer>
           <li><a href="/mrrobot/profile.php?id=wishlist">Wish List</a></li>
           <li><a href="#">Newsletter</a></li>
         </ul>
-</div>
+
 </div>
 <hr>
+<div id="mrrobot-logo">
 <p>Powered By : <a href="#"><img class="logo" src="images//mrrobotLogo.svg"/></a><br></p>
+</div>
 <span style="text-align=center;"> MR ROBOT © 2016</span>
-</footer>';
 
+</footer>
+';
 }
 function printItem(){
   echo '<div class="product-thumb transition">
-      <div class="image"><a href="#"><img id="zoom_02" src="images/items/macbook_1-200x200.jpg" alt="MacBook" title="MacBook" class="img-responsive" data-zoom-image="images/items/macbook_air.jpg"></a></div>
+      <div class="image"><a href="#"><img id="zoom_02" src="images/items/macbook_1-200x200.jpg" alt="MacBook" title="MacBook" class="img-responsive" data-zoom-image="images/items/macbook_air.png"></a></div>
       <div class="caption">
         <h4><a href="#">MacBook</a></h4>
         <p>
@@ -125,6 +126,28 @@ function viewcart(){
         <p class="text-right"><a href="/mrrobot/cart.php"><strong><i class="fa fa-shopping-cart"></i> View Cart</strong></a>&nbsp;&nbsp;&nbsp;<a href="#"><strong><i class="fa fa-share"></i> Checkout</strong></a></p>
       </div>
     </li>';
+}
+function printAccountMenu(){
+  if(false){
+    return'
+    <ul class="dropdown-menu dropdown-menu-right">
+                        <li><a href="/Mrrobot/register.php">Register</a></li>
+            <li><a href="/mrrobot/login.php">Login</a></li>
+                      </ul>
+        </li>';
+  }
+  else{
+    return'
+    <ul class="dropdown-menu dropdown-menu-right">
+                        <li><a href="/Mrrobot/profile.php">Account</a></li>
+            <li><a href="/mrrobot/profile.php?id=orders">Orders</a></li>
+            <li><a href="/mrrobot/profile.php?id=history">Orders History</a></li>
+            <li><a href="/mrrobot/profile.php?id=setting">Settings</a></li>
+            <li><a href="/mrrobot/profilssss">Log Out</a></li>
+                      </ul>
+        </li>';
+
+  }
 }
 
 ?>

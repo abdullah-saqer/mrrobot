@@ -155,3 +155,28 @@ body{
   margin-bottom: 8px;
 }
     }
+    /*css for eye icon*/
+    .inner-addon { 
+    position: relative; 
+}
+
+/* style icon */
+.inner-addon { 
+    position: relative; 
+}
+
+/* style icon */
+.inner-addon .glyphicon {
+  position: absolute;
+  padding: 10px;
+  cursor: pointer;
+}
+
+/* align icon */
+.right-addon .glyphicon { right: 0px; 
+display:none;
+}
+
+/* add padding  */
+.left-addon input  { padding-left:  11px; }
+.right-addon input { padding-right: 30px; }

@@ -41,7 +41,11 @@ require("functions/engine.php");
    <div id="page-content" class="row">
        <div class="col-sm-8">
           <ul class="thumbnails">
-            <li><a class="thumbnail" href="images/products/iphone-6-1.png" title="Iphone"><img src="images/products/iphone-1.png" title="Iphone" alt="Iphone"></a></li>
+            <li><a class="thumbnail" href="images/products/iphone-6-1.png" title="Iphone"><img src="images/products/iphone-1.png" title="Iphone" alt="Iphone"></a>
+            <span class="tags">
+            <span class="price-tag"><a href="javascript:void()">100 JOD</a></span>
+             </span>
+             </li>
             <li class="image-additional"><a class="thumbnail" href="images/products/iphone-6-2.png" title="Iphone"> <img src="images/products/iphone-6-2.png" title="Iphone" alt="Iphone"></a></li>
             <li class="image-additional"><a class="thumbnail" href="images/products/iphone-6-3.png" title="Iphone"> <img src="images/products/iphone-6-3.png" title="Iphone" alt="Iphone"></a></li>
             <li class="image-additional"><a class="thumbnail" href="images/products/iphone-6-3.png" title="Iphone"> <img src="images/products/iphone-6-4.png" title="Iphone" alt="Iphone"></a></li>

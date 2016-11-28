@@ -20,6 +20,24 @@ require("functions/engine.php");
 
 <link href="javascript/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 	<title>Login</title>
+	<script type="text/javascript">
+
+$( document ).ready(function(event) {
+$("#input-password").on("keyup",function(){
+    if($(this).val())
+        $(".glyphicon-eye-open").show();
+    else
+        $(".glyphicon-eye-open").hide();
+    });
+$(".glyphicon-eye-open").bind('mousedown touchstart',function(){
+                $("#input-password").attr('type','text');
+            }).bind('mouseup touchend',function(){
+            	$("#input-password").attr('type','password');
+            }).mouseout(function(){
+            	$("#input-password").attr('type','password');
+            });
+        });
+	</script>
 </head>
 <body id="common-home">
 <header>
@@ -40,28 +58,32 @@ require("functions/engine.php");
 <div class="row" ">
 	    <div id="login-div" class="col-sm-8" ">   
          
-          <h3>Signin to your Account</h3>
+          <h3>Sign in to your Account</h3>
 	<hr>
 	<form action="#" method="post"  class="form-horizontal">
         <fieldset id="login">
           <div class="form-group required">
-            <label class="col-sm-2 control-label" for="input-username">Username:</label>
+            <label class="col-sm-2 control-label" for="input-username">Email:</label>
             <div class="col-sm-6" >
-              <input type="text" name="username" value="" id="input-username" class="form-control"  />
+              <input type="text" name="username" placeholder="Enter your email" value="" id="input-username" class="form-control"  />
                           </div>
           </div>
           <div class="form-group required">
             <label class="col-sm-2 control-label" for="input-password">Password:</label>
             <div class="col-sm-6" >
+           	    <div class="inner-addon right-addon">
               <input type="password"  name="password" value=""  id="input-password" class="form-control" />
-            
+              <span class="glyphicon glyphicon-eye-open"></span>
+          		</div>
                           </div>
           </div>
           </fieldset>
           <div class="form-group ">
           <p class="col-sm-6 col-sm-offset-3" >error message will display here</p>
           <a href="#" class="col-sm-4 col-sm-offset-1" >forgot your password?</a>
-          <input type="submit" value="Continue" class="btn btn-primary col-sm-3 col-sm-offset-0"  />
+          		
+	              <input type="submit" value="Continue" class="btn btn-primary col-sm-3 col-sm-offset-0"  />
+	            
           </div>
 	
 	</form>
@@ -72,7 +94,7 @@ require("functions/engine.php");
 	<h3>Register</h3>
 	<hr>
 	<div class="col-sm-12">
-	<P>Create one account for MRROBOT e-Mall and use it in multiple stores</P>
+	<P>Create an account for MRrobot e-Mall and use it in multiple stores</P>
 
 	</div>
 	<div class="col-sm-12">
@@ -80,10 +102,10 @@ require("functions/engine.php");
           
 	</div>
 	<div class="col-sm-12">
-	<p>Beacame a Merchant and sell products</p>
+	<p>Become a Merchant to sell products</p>
 	</div>
 	<div class="col-sm-12">
-	<button  id="reg-btn-mar"  class="btn btn-info col-sm-3 col-sm-offset-1" >Became A Merchant</button>
+	<button  id="reg-btn-mar"  class="btn btn-info col-sm-3 col-sm-offset-1" >Become A Merchant</button>
           
 	</div>
 
@@ -105,8 +127,8 @@ require("functions/engine.php");
 
 
 
-
-<?php printfooter();?>
 </div>
+<?php printfooter();?>
+
 </body>
 </html>

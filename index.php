@@ -16,6 +16,8 @@ require("functions/engine.php");
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="javascript/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
 <script src="javascript/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="javascript/hovermenu/bootstrap-hover-dropdown.min.js"></script>
+
 <link href="//fonts.googleapis.com/css?family=Open+Sans:400,400i,300,700" rel="stylesheet" type="text/css">
 <script src="javascript/navbar.js" type="text/javascript"></script>
 
@@ -77,8 +79,8 @@ require("functions/engine.php");
     <!--button-->
     <div id="fix">
     <ul class="nav nav-stacked">
-    <li>
-        <div class="btn-group "> <a class="btn btn-primary dropdown-toggle open " data-toggle="dropdown" data-hover="dropdown" href="#">
+    <li data-hover="dropdown">
+        <div class="btn-group" > <a class="btn btn-primary dropdown-toggle  " data-hover="dropdown" data-toggle="dropdown"  href="#">
         shop By Category
       </a>
 

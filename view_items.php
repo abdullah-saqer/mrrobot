@@ -195,8 +195,8 @@ require("functions/engine.php");
         <div class="row" id="view-navigation">
        <div class="col-md-2 hidden-xs">
        <div class="btn-group btn-group-sm">
-            <button type="button" id="list" class="btn btn-default" data-toggle="tooltip" title="" data-original-title="List"><i class="fa fa-th-list"></i></button>
-            <button type="button" id="grid" class="btn btn-default  " data-toggle="tooltip" title="" data-original-title="Grid"><i class="fa fa-th"></i></button>
+            <button type="button" id="list" class="btn btn-default" data-toggle="tooltip" title="List" data-original-title="List"><i class="fa fa-th-list"></i> List</button>
+            <button type="button" id="grid" class="btn btn-default  " data-toggle="tooltip" title="Grid" data-original-title="Grid"><i class="fa fa-th"></i> Grid</button>
           </div>
        </div>
      

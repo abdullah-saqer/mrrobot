@@ -33,10 +33,12 @@ require("functions/engine.php");
         <li><a href="#">Profile</a></li>
         <li><a href="#" id="current-tab">Information</a></li>
       </ul>
+           <div class="message_area" style="display:none;"><p id="message"></p></div>
+
 	<div class="row" id="content">
 		<div class="col-xs-12">
 			<ul class="tab">
-  <li><a href="javascript:void(0)" id="defaultOpen" class="tablinks" onclick="openTab(event, 'information')"><span><i class="fa fa-info"></i> </span><span class="hidden-xs hidden-sm hidden-md">Information</span></a></li>
+  <li><a href="javascript:void(0)"  class="tablinks" onclick="openTab(event, 'information')"><span><i class="fa fa-info"></i> </span><span class="hidden-xs hidden-sm hidden-md">Information</span></a></li>
   <li><a href="javascript:void(0)" class="tablinks" onclick="openTab(event, 'orders')"><span><i class="fa fa-shopping-cart"></i> </span><span class="hidden-xs hidden-sm hidden-md">My orders</span></a></li>
   <li><a href="javascript:void(0)" class="tablinks" onclick="openTab(event, 'history')"><span><i class="fa fa-history"></i> </span><span class="hidden-xs hidden-sm hidden-md">Orders History</span></a></li>
   <li><a href="javascript:void(0)" class="tablinks" onclick="openTab(event, 'wishlist')"><span><i class="fa fa-heart"></i> </span><span class="hidden-xs hidden-sm hidden-md">My Wishlist</span></a></li>
@@ -57,19 +59,19 @@ require("functions/engine.php");
 		<div id="panel1" class="panel-collapse collapse">
 			<div class="panel-body">
                 <label class="col-sm-2 control-label" for="input-firstname">First Name</label>
-                <p class="col-sm-10 " for="input-firstname">First Name here</p>
+                <p class="col-sm-10 " id="fname"></p>
           
           
             <label class="col-sm-2 control-label" for="input-lastname">Last Name</label>
-            <p class="col-sm-10 " for="input-firstname">Last Name here</p>
+            <p class="col-sm-10 " id="lname"></p>
           
           
             <label class="col-sm-2 control-label" for="input-email">E-Mail</label>
-            <p class="col-sm-10 " for="input-firstname">email@domain.com</p>
+            <p class="col-sm-10 " id="email"></p>
           
       
             <label class="col-sm-2 control-label" for="input-telephone">Telephone</label>
-            <p class="col-sm-10 " for="input-firstname">07#/#######</p>
+            <p class="col-sm-10 " id="tel"></p>
           </div> 
 			</div>
 		</div>
@@ -82,7 +84,14 @@ require("functions/engine.php");
 		</div>
 		<div id="panel2" class="panel-collapse collapse">
 			<div class="panel-body">
-                Contents panel 2
+                <label class="col-sm-2 control-label" for="input-firstname">Address 1</label>
+                <p class="col-sm-10 " id="add1"></p>
+          
+          
+            <label class="col-sm-2 control-label" for="input-lastname">Address 2</label>
+            <p class="col-sm-10 " id="add2"></p>
+            <label class="col-sm-2 control-label" for="input-lastname">City</label>
+            <p class="col-sm-10 " id="city"></p>
 			</div>
 		</div>
     </div>
@@ -91,90 +100,25 @@ require("functions/engine.php");
 </div>
 <!-- end info div-->
 <!-- start order div-->
-<div id="orders" class="tabcontent">
-  <div class=row >
+<div id="orders" class="tabcontent container">
+  <div class="container">
+  <div class="row">
 
 <div id="order-details" class="col-sm-6 col-sm-offset-3">
-<table class="table table-bordered table-hover table-responsive">
+<table id="orders-table" class="table table-bordered table-hover table-responsive">
 <h4>Order Details</h4>
+      <thead>
           <tr>
               <th class="">Order ID</th>
               <th class="">Status</th>
               <th class="">Total</th>
           </tr>
-          <tr class="header expand">
-            <td class="text-center">15567</td>
-                <td class="text-center">Received</td>
-                <td class="text-center">600 JD<span class="sign"></span></td>
-         </tr>
-         <!--orderd items-->
-         <tr style="display: none;">
-         <td colspan="3" id="itemstable" >
-         <table class="table table-bordered" id="inner-table"  >
-         <tr>
-
-              <th>Item ID</th>
-              <th>Name</th>
-              <th>Brand</th>
-              <th>Quantity</th>
-              <th>Price</th>
-          </tr>
-            <tr>
-            <td >1</td>
-                <td >Iphone 7 64GB</td>
-                <td >Apple</td>
-                <td>2</td>
-                <td>600JD</td>
-
-          </tr>
-          <tr>
-              <td >2</td>
-                <td >Samsung S7</td>
-                <td >Samsung</td>
-                <td>1</td>
-                <td>500JD</td>
-          </tr>
-          </table>
-          </td>
-          </tr>
-          <tr class="header expand">
-            <td class="text-center">15569</td>
-                <td class="text-center">On Delivery</td>
-                <td class="text-center">700 JD<span class="sign"></span></td>
-                <span class="sign"></span>
-         </tr>
-         <tr style="display: none;">
-         <td colspan="3" id="itemstable">
-         <table class="table table-bordered" id="inner-table" >
-         <tr>
-
-              <th>Item ID</th>
-              <th>Name</th>
-              <th>Brand</th>
-              <th>Quantity</th>
-              <th>Price</th>
-          </tr>
-            <tr>
-            <td >1</td>
-                <td >Iphone 7 64GB</td>
-                <td >Apple</td>
-                <td>2</td>
-                <td>600JD</td>
-
-          </tr>
-          <tr>
-              <td >2</td>
-                <td >Samsung S7</td>
-                <td >Samsung</td>
-                <td>1</td>
-                <td>500JD</td>
-          </tr>
-          </table>
-          </td>
-          </tr>
+          </thead>
+         
                       </table>
 </div>
 
+</div>
 </div>
 
 </div>
@@ -183,84 +127,17 @@ require("functions/engine.php");
 <div id="history" class="tabcontent">
   <div class=row>
 
-<div id="order-details" class="col-sm-6 col-sm-offset-3">
-<table class="table table-bordered table-hover table-responsive">
+<div id="history-details" class="col-sm-6 col-sm-offset-3">
+<table id="history-table" class="table table-bordered table-hover table-responsive">
 <h4>Order History</h4>
+          <thead>
           <tr>
               <th class="">Order ID</th>
               <th class="">Delivery Date</th>
               <th class="">Total</th>
           </tr>
-          <tr class="header expand">
-            <td class="text-center">15567</td>
-                <td class="text-center">11-May-2016</td>
-                <td class="text-center">600 JD <span class="sign"></span></td>
-         </tr>
-         <tr style="display: none;">
-         <td colspan="3" id="itemstable">
-         <table class="table table-bordered" id="inner-table">
-         <tr>
-              <th>Item ID</th>
-              <th>Name</th>
-              <th>Brand</th>
-              <th>Quantity</th>
-              <th>Price</th>
-          </tr>
-          <tr>
-            <td >1</td>
-                <td >Iphone 7 64GB</td>
-                <td >Apple</td>
-                <td>2</td>
-                <td>600JD</td>
+          </thead>
 
-          </tr>
-          <tr>
-              <td >2</td>
-                <td >Samsung S7</td>
-                <td >Samsung</td>
-                <td>1</td>
-                <td>500JD</td>
-          </tr>
-         
-           
-         </table>
-         </td>
-         </tr>
-          <tr class="header expand">
-            <td class="text-center">15569</td>
-                <td class="text-center">19-Dec-2016</td>
-                <td class="text-center">700 JD <span class="sign"></span></td>
-         </tr>
-          <tr style="display: none;">
-         <td colspan="3" id="itemstable">
-         <table class="table table-bordered" id="inner-table">
-         <tr>
-              <th>Item ID</th>
-              <th>Name</th>
-              <th>Brand</th>
-              <th>Quantity</th>
-              <th>Price</th>
-          </tr>
-          <tr>
-            <td >1</td>
-                <td >Iphone 7 64GB</td>
-                <td >Apple</td>
-                <td>2</td>
-                <td>600JD</td>
-
-          </tr>
-          <tr>
-              <td >2</td>
-                <td >Samsung S7</td>
-                <td >Samsung</td>
-                <td>1</td>
-                <td>500JD</td>
-          </tr>
-         
-           
-         </table>
-         </td>
-         </tr>
                       </table>
 </div>
 
@@ -271,41 +148,22 @@ require("functions/engine.php");
 <!-- start wishlist div-->
 <div id="wishlist" class="tabcontent">
   <div class="row">
-  <div id="wishlist" class="col-sm-6 col-sm-offset-3">
-<table class="table table-bordered  table-responsive">
+  <div id="wishlist-content" class="col-sm-6 col-sm-offset-3">
+<table id="wishlist-table" class="table table-bordered  table-responsive">
   <h4>My Wishlist</h4>
+  <thead>
   <tr>
-    
+          
               <th>Item ID</th>
               <th>Name</th>
-              <th>Brand</th>
               <th>Price</th>
               <th id="action-btn">Action</th>
+           
         
           </tr>
-           <tr  class="discount">
-            <td >1</td>
-                <td >Iphone 7 64GB</td>
-                <td >Apple</td>
-                <td>600JD</td>
-                <td id="action-btn"><button type="button" class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i></button></td>
-
-          </tr>
-          <tr class="out-of-stock">
-              <td >2</td>
-                <td >Samsung S7</td>
-                <td >Samsung</td>
-                <td>500JD</td>
-                <td id="action-btn"><button type="button" class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i></button></td>
-          </tr>
-          <tr>
-              <td >2</td>
-                <td >Samsung Note 5</td>
-                <td >Samsung</td>
-                <td>550JD</td>
-                <td id="action-btn"><button type="button" class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i></button></td>
-          </tr>
-         
+             </thead>
+      
+          
 
   </table>
   <div class="col-sm-6 col-sm-offset-3" style="display: inline-block;">
@@ -332,7 +190,7 @@ require("functions/engine.php");
     <div id="panel3" class="panel-collapse collapse ">
       <div class="panel-body ">
       <div class="row">
-      <form action="#" method="post"  class="form-horizontal">
+      <div  class="form-horizontal">
         
           
           <div class="form-group required">
@@ -361,11 +219,11 @@ require("functions/engine.php");
           </div>
           <div class="buttons">
           <div class="pull-right">
-            <input type="submit" value="Update" class="btn btn-primary" />
+            <input id="change-personal" type="submit" value="Update" class="btn btn-primary" />
           </div>
         </div>
                 
-                  </form>
+                  </div>
                   </div>
                   
         
@@ -384,7 +242,7 @@ require("functions/engine.php");
     <div id="panel4" class="panel-collapse collapse">
       <div class="panel-body">
                <div class="row">
-      <form action="#" method="post"  class="form-horizontal">
+      <div  class="form-horizontal">
       <div class="form-group required">
             <label class="col-sm-2 control-label" for="input-address-1">Address 1</label>
             <div class="col-sm-5">
@@ -402,27 +260,27 @@ require("functions/engine.php");
             <div class="col-sm-5">
               <select name="city_id" id="input-city" class="form-control">
                       <option value=""> --- Please Select --- </option>
-                      <option value="1">Ajloon</option>
-                      <option value="2">Amman</option>
-                      <option value="3">Aqaba</option>
-                      <option value="4">Balqa</option>
-                      <option value="5">Irbid</option>
-                      <option value="6">Jerash</option>
-                      <option value="7">Karak</option>
-                      <option value="8">Ma'An</option>
-                      <option value="9">Madaba</option>
-                      <option value="10">Mafraq</option>
-                      <option value="11">Tafileh</option>
-                      <option value="12">Zarqa</option>
+                      <option value="Ajloon">Ajloon</option>
+                      <option value="Amman">Amman</option>
+                      <option value="Aqaba">Aqaba</option>
+                      <option value="Balqa">Balqa</option>
+                      <option value="Irbid">Irbid</option>
+                      <option value="Jerash">Jerash</option>
+                      <option value="Karak">Karak</option>
+                      <option value="Ma'An">Ma'An</option>
+                      <option value="Madaba">Madaba</option>
+                      <option value="Mafraq">Mafraq</option>
+                      <option value="Tafileh">Tafileh</option>
+                      <option value="Zarqa">Zarqa</option>
               </select>
             </div>
             </div>
           <div class="buttons">
           <div class="pull-right">
-            <input type="submit" value="Update" class="btn btn-primary" />
+            <input type="submit" id="change-address" value="Update" class="btn btn-primary" />
           </div>
         </div>
-          </form>
+          </div>
           </div>
                 
       </div>
@@ -437,7 +295,7 @@ require("functions/engine.php");
     <div id="panel5" class="panel-collapse collapse">
       <div class="panel-body">
                  <div class="row">
-      <form action="#" method="post"  class="form-horizontal">
+      <div class="form-horizontal">
       <div class="form-group required">
             <label class="col-sm-2 control-label" for="input-password">Old Password</label>
             <div class="col-sm-5">
@@ -459,10 +317,10 @@ require("functions/engine.php");
         
           <div class="buttons">
           <div class="pull-right">
-            <input type="submit" value="Update" class="btn btn-primary" />
+            <input type="submit" id="change-password" value="Update" class="btn btn-primary" />
           </div>
         </div>
-          </form>
+          </div>
           </div>
       </div>
     </div>
@@ -477,7 +335,7 @@ require("functions/engine.php");
     <div id="panel6" class="panel-collapse collapse">
       <div class="panel-body">
            <div class="row">
-      <form action="#" method="post"  class="form-horizontal">
+      <div class="form-horizontal">
       <div class="form-group">
             <label class="col-sm-2 control-label">Subscribe</label>
             <div class="col-sm-5">
@@ -495,7 +353,7 @@ require("functions/engine.php");
             <input type="submit" value="Update" class="btn btn-primary" />
           </div>
         </div>
-          </form>
+          </div>
           </div>
       </div>
     </div>

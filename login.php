@@ -1,7 +1,8 @@
 <?php
 //require("functions/connect.php");
 require("functions/engine.php");
-
+if(isset($_COOKIE['platinumMallCookie']))
+header("Location: /mrrobot/index.php"); 
 ?>
 <!DOCTYPE html>
 <html>
@@ -20,24 +21,7 @@ require("functions/engine.php");
 
 <link href="javascript/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 	<title>Login</title>
-	<script type="text/javascript">
-
-$( document ).ready(function(event) {
-$("#input-password").on("keyup",function(){
-    if($(this).val())
-        $(".glyphicon-eye-open").show();
-    else
-        $(".glyphicon-eye-open").hide();
-    });
-$(".glyphicon-eye-open").bind('mousedown touchstart',function(){
-                $("#input-password").attr('type','text');
-            }).bind('mouseup touchend',function(){
-            	$("#input-password").attr('type','password');
-            }).mouseout(function(){
-            	$("#input-password").attr('type','password');
-            });
-        });
-	</script>
+	<script src="javascript/login.js" type="text/javascript"></script>
 </head>
 <body id="common-home">
 <header>
@@ -60,7 +44,7 @@ $(".glyphicon-eye-open").bind('mousedown touchstart',function(){
          
           <h3>Sign in to your Account</h3>
 	<hr>
-	<form action="#" method="post"  class="form-horizontal">
+	<div class="form-horizontal">
         <fieldset id="login">
           <div class="form-group required">
             <label class="col-sm-2 control-label" for="input-username">Email:</label>
@@ -79,14 +63,14 @@ $(".glyphicon-eye-open").bind('mousedown touchstart',function(){
           </div>
           </fieldset>
           <div class="form-group ">
-          <p class="col-sm-6 col-sm-offset-3" >error message will display here</p>
+          <p class="col-sm-6 col-sm-offset-3" id="error-message"></p>
           <a href="#" class="col-sm-4 col-sm-offset-1" >forgot your password?</a>
           		
-	              <input type="submit" value="Continue" class="btn btn-primary col-sm-3 col-sm-offset-0"  />
+	              <input type="submit" id="login_btn" value="Continue" class="btn btn-primary col-sm-3 col-sm-offset-0"  />
 	            
           </div>
 	
-	</form>
+	</div>
 	</div>
 
 	<div id="reg-div" class="col-sm-4">

@@ -180,3 +180,6 @@ display:none;
 /* add padding  */
 .left-addon input  { padding-left:  11px; }
 .right-addon input { padding-right: 30px; }
+#error-message{
+  color:#ff3333;
+}

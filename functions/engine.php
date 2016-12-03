@@ -50,10 +50,10 @@ echo'
 <div class="col-md-4">
 <h5>My account</h5>
 <ul class="list-unstyled">
-          <li><a href="/mrrobot/profile.php">My Account</a></li>
+          <li><a href="/mrrobot/profile.php?id=information">My Account</a></li>
           <li><a href="/mrrobot/profile.php?id=history">Order History</a></li>
           <li><a href="/mrrobot/profile.php?id=wishlist">Wish List</a></li>
-          <li><a href="#">Newsletter</a></li>
+          <li><a href="/mrrobot/profile.php?id=setting">Settings</a></li>
         </ul>
 
 </div>
@@ -128,7 +128,7 @@ function viewcart(){
     </li>';
 }
 function printAccountMenu(){
-  if(false){
+  if(!isset($_COOKIE['platinumMallCookie'])){
     return'
     <ul class="dropdown-menu dropdown-menu-right">
                         <li><a href="/Mrrobot/register.php">Register</a></li>
@@ -139,15 +139,16 @@ function printAccountMenu(){
   else{
     return'
     <ul class="dropdown-menu dropdown-menu-right">
-                        <li><a href="/Mrrobot/profile.php">Account</a></li>
+                        <li><a href="/Mrrobot/profile.php?id=information">Account</a></li>
             <li><a href="/mrrobot/profile.php?id=orders">Orders</a></li>
             <li><a href="/mrrobot/profile.php?id=history">Orders History</a></li>
             <li><a href="/mrrobot/profile.php?id=setting">Settings</a></li>
-            <li><a href="/mrrobot/profilssss">Log Out</a></li>
+            <li><a href="/mrrobot/logout.php">Log Out</a></li>
                       </ul>
         </li>';
 
   }
 }
+
 
 ?>

@@ -36,3 +36,38 @@ div.required .control-label:before {
 	color: #F00;
 	font-weight: bold;
 }
+.message_area{
+  width: 230px;
+  height: 35px;
+  border:1px solid rgba(0,0,0,0.2);
+  position: fixed;
+  left:77%;
+  top:90%;
+  border-radius: 3px;
+  background-color: white;
+  transition:background-color 0.7s;
+  display: none;
+  z-index: 100;
+  background-color: #DDD;
+  border:1px solid red;
+}
+
+
+  #message{
+  position: relative;
+  top:5px;
+  font-size: 15px;
+  z-index: 100;
+  left:2px;
+  color: #f75b59;
+
+ 
+
+}
+.error{
+	border-color: red;
+}
+#input-password::parent {
+	color:red;
+ 
+}

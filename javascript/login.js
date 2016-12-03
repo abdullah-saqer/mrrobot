@@ -8,8 +8,40 @@ $("#input-password").on("keyup",function(){
 $(".glyphicon-eye-open").bind('mousedown touchstart',function(){
                 $("#input-password").attr('type','text');
             }).bind('mouseup touchend',function(){
-            	$("#input-password").attr('type','password');
+                $("#input-password").attr('type','password');
             }).mouseout(function(){
-            	$("#input-password").attr('type','password');
+                $("#input-password").attr('type','password');
             });
+
+
+$("#login_btn").click(function(){
+    var email=$("#input-username").val();
+    var password=$("#input-password").val();
+    if(email.length&&password.length){
+        $.ajax({
+        url:'functions/responder.php',
+        type:'POST',
+        data:'userLogin=1&email='+email+'&password='+password,
+        success:function(result){
+        //result=JSON.parse(result);
+        if(result==-1){
+            $("#error-message").html("Incorrect email or password");
+        }
+        else{
+            window.location.href = '/mrrobot/index.php';
+        }
+       
+            }
         });
+
+    }
+    else{
+        $("#error-message").html("Please fill all required informations");
+
+    }
+
+});          
+
+        });
+
+

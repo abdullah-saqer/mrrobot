@@ -24,6 +24,8 @@ require("functions/engine.php");
 <!-- Magnific Popup core JS file -->
 <script src="javascript/magnific-popup/jquery.magnific-popup.js"></script>
 <script type="text/javascript" src="javascript/viewitem.js"></script>
+<script type="text/javascript" src="javascript/navbar.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
 <title>View Item</title>
 
 </head>
@@ -34,46 +36,53 @@ require("functions/engine.php");
 <div class="container">
 <ul class="breadcrumb">
         <li><a href="/mrrobot"><i class="fa fa-home"></i></a></li>
-        <li><a href="#">Mobile</a></li>
-        <li><a href="#">Apple</a></li>
-        <li><a href="#" id="current-tab">Iphone 6 Gold</a></li>
+        <li><a id="category" href="#"></a></li>
+        <li><a id="brand" href="#"></a></li>
+        <li><a href="#" id="current-page"></a></li>
       </ul>
    <div id="page-content" class="row">
        <div class="col-sm-8">
           <ul class="thumbnails">
-            <li><a class="thumbnail" href="images/products/iphone-6-1.png" title="Iphone"><img src="images/products/iphone-1.png" title="Iphone" alt="Iphone"></a>
-            <span class="tags">
-            <span class="price-tag"><a href="javascript:void()">100 JOD</a></span>
-             </span>
-             </li>
-            <li class="image-additional"><a class="thumbnail" href="images/products/iphone-6-2.png" title="Iphone"> <img src="images/products/iphone-6-2.png" title="Iphone" alt="Iphone"></a></li>
-            <li class="image-additional"><a class="thumbnail" href="images/products/iphone-6-3.png" title="Iphone"> <img src="images/products/iphone-6-3.png" title="Iphone" alt="Iphone"></a></li>
-            <li class="image-additional"><a class="thumbnail" href="images/products/iphone-6-3.png" title="Iphone"> <img src="images/products/iphone-6-4.png" title="Iphone" alt="Iphone"></a></li>
+            
           </ul>
           <ul class="nav nav-tabs">
-          <li class="active"><a href="#tab-description" data-toggle="tab" aria-expanded="true">Description</a></li>
+          <li class="active "><a href="#tab-description" data-toggle="tab" aria-expanded="true">Description</a></li>
+          <li ><a href="#tab-Specification" data-toggle="tab" aria-expanded="true">Specifications</a></li>
           
           </ul>
-          <div class="tab-content">
-            <div class="tab-pane active" id="tab-description"><p class="intro">
-             iPhone is a revolutionary new mobile phone that allows you to make a call by simply tapping a name or number in your address book, a favorites list, or a call log. It also automatically syncs all your contacts from a PC, Mac, or Internet service. And it lets you select and listen to voicemail messages in whatever order you want just like email.</p>
-            </div>           
+          <div class="tab-content ">
+            <div class="tab-pane " id="tab-description" >
+            <p class="intro"></p>
+             
+            </div>
+            <div class="tab-pane" id="tab-Specification">
+            <table  id="specifications-table" class="table table-bordered table-hover table-responsive">
+              <thead>
+                <tr >
+                  <th colspan="2" class="text-center">Features</th>
+                </tr>
+              </thead>
+             
+
+            </table>
+             
+            </div>          
           </div> 
         </div>
         <div class="col-sm-4">
           <div class="btn-group">
-            <button type="button"  class="btn btn-default"><i class="fa fa-heart"></i></button>
-            <button type="button" class="btn btn-default"><i class="fa fa-exchange"></i></button>
+            <button id="addToWishList" type="button"  class="btn btn-default"><i class="fa fa-heart"></i></button>
+            <button id="addToCompare" type="button" class="btn btn-default"><i class="fa fa-exchange"></i></button>
           </div>
-          <h1>Iphone 6 Gold-Rose</h1>
+          <h1 id="product-name"></h1>
           <ul class="list-unstyled">
-             <li>Brand: <a href="#">Apple</a></li>
-             <li>Availability: In Stock</li>
-             <li><button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">360 View</button></li>
+             <li>Brand: <a id="product-brand" href="#"></a></li>
+             <li id="availability"></li>
+             <li><button id="350-view" type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">360 View</button></li>
           </ul>
           <ul class="list-unstyled">
              <li>
-              <h2>550 JOD</h2>
+              <h2 id="price"></h2>
              </li>
                                    
           </ul>
@@ -86,16 +95,16 @@ require("functions/engine.php");
                     <span class="glyphicon glyphicon-minus"></span>
                   </button>
                  </span>
-                <input type="text" name="quant[2]" class="form-control input-number" value="1" min="1" max="5">
+                <input id="quantity" type="text" name="quant[2]" class="form-control input-number" value="1" min="1" max="5">
                  <span class="input-group-btn">
                   <button type="button" class="btn btn-success btn-number" data-type="plus" data-field="quant[2]">
                     <span class="glyphicon glyphicon-plus"></span>
                   </button>
                   </span>
                </div>
-              <input type="hidden" name="product_id" value="">
+              <input type="hidden" name="product_id" id="product_id" value="">
               <br>
-              <button type="button" id="button-cart"  class="btn btn-primary btn-lg btn-block">Add to Cart</button>
+              <button type="button" id="Add-to-cart"  class="btn btn-primary btn-lg btn-block">Add to Cart</button>
               </div>
           </div>
                   

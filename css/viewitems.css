@@ -33,6 +33,13 @@ header{
 	padding-left: 20px;
 	width:100%;
 }
+/*#price-1{
+    border:0;
+    color:#b9cd6d;
+    font-weight:bold;
+    padding-left: 20px;
+    width:100%;
+}*/
 
 #filters-content{
 	margin-top: 15px;
@@ -214,4 +221,17 @@ header{
     height: 36px;
 }
 }
-
+/*test image
+.image{
+        min-height: 220px;
+}
+*/
+.product-thumb .image img {
+    margin-left: auto;
+    margin-right: auto;
+    min-height: 200px !important;
+        max-height: 200px !important
+}
+#compare-total{
+        margin-left: -15px;
+}

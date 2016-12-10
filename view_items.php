@@ -237,11 +237,15 @@ require("functions/engine.php");
        </div>
        <div id="products" class="row list-group">
 		<?php
-       for ($x = 0; $x <= 10; $x++) {
-        echo '<div class="item  col-xs-4 col-lg-4 grid-group-item">';
-        printItem();
-        echo'</div>';
-			}
+       
+        
+        PrintLastestItems(10,0);
+   /* for ($i=0; $i <10 ; $i++) { 
+      printItem();
+    }
+      */
+      
+			
         ?>
 
        

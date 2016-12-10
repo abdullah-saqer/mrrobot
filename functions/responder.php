@@ -133,7 +133,7 @@ if(isset($_POST['ChangeAddress'])){
 	$result = curl_exec($ch);
 	$result=json_decode($result,true);
 	$result["address1"]= $add1;
-	$result["address2"]=$add1;
+	$result["address2"]=$add2;
 	$result["city"]=$city;
 	
 	$result=json_encode($result);
@@ -189,7 +189,12 @@ if(isset($_POST['getOrdersItemsById'])){
 	echo $result;
 }
 
-if(isset($_POST['getBrandByItemId'])){
+if(isset($_POST['getItemById'])){
+	 $ch = curl_init();
+	curl_setopt($ch, CURLOPT_URL,'http://localhost/PlatinumMall/items/'.$_POST['itemId']);
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+	$result = curl_exec($ch);
+	echo $result;
 	}
 
 ?>

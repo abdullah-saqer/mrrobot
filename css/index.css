@@ -185,6 +185,7 @@ header{
 .product-thumb .image img {
     margin-left: auto;
     margin-right: auto;
+    min-height: 204px;
 }
 .product-grid .product-thumb .image {
     float: none;

@@ -67,7 +67,7 @@ echo'
 ';
 }
 function printItem(){
-  echo '<div class="product-thumb transition">
+  echo '<div class="item  col-xs-4 col-lg-4 grid-group-item"><div class="product-thumb transition">
       <div class="image"><a href="#"><img id="zoom_02" src="images/items/macbook_1-200x200.jpg" alt="MacBook" title="MacBook" class="img-responsive" data-zoom-image="images/items/macbook_air.png"></a></div>
       <div class="caption">
         <h4><a href="#">MacBook</a></h4>
@@ -86,8 +86,68 @@ function printItem(){
         <button type="button" ><i class="fa fa-exchange"></i></button>
       </div>
      </div>
+     </div>
    ';
 }
+
+ function PrintLastestItems($itemCount,$flag){
+$ch = curl_init();
+  curl_setopt($ch, CURLOPT_URL,'localhost/PlatinumMall/items/getitemsbystoreid/1');
+  curl_setopt($ch, CURLOPT_POST, true);
+  curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+  $result = curl_exec($ch);
+  $result=json_decode($result,true);
+ 
+$count=0;
+ foreach ($result as &$value){
+  $count++;
+PrintItemById($value['id'],$flag);
+if($count==$itemCount)
+break;
+ }
+ 
+}
+function PrintItemById($id,$flag){
+   $ch = curl_init();
+  curl_setopt($ch, CURLOPT_URL,'http://localhost/PlatinumMall/items/'.$id);
+  curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+  $result = curl_exec($ch);
+  $result=json_decode($result,true);
+  if($flag==1){//for index page
+  $item='<div class="item">';
+}
+else
+{//for view items page 
+  $item= '<div class="item  col-xs-4 col-lg-4 grid-group-item">';
+}
+  $item.='<div class="product-thumb transition">
+      <div class="image"><a href="view_item.php?id='.$id.'"><img  src="'.getPrimaryphoto($result['photos']).'" alt="'.$result['name'].'" title="'.$result['name'].'" class="img-responsive"</a></div>
+      <div class="caption">
+        <h4><a href="view_item.php?id='.$id.'">'.$result['name'].'</a></h4>
+        <p>'.$result['description'].'</p>
+         <p class="price">'.$result['price'].' JOD<span class="price-tax">Store:Mrrobot</span></p>
+              </div>
+      <div class="button-group">
+        <button type="button" ><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md">Add to Cart</span></button>
+        <button type="button" ><i class="fa fa-heart"></i></button>
+        <button type="button" ><i class="fa fa-exchange" id="addToCompare" data-button="'.$id.'"></i></button>
+      </div>
+     </div>';
+     $item.="</div>";
+     echo $item;
+}
+
+
+
+function getPrimaryphoto($photos){
+  foreach ($photos as &$value){
+    if($value['primary']==true)
+      return $value['path'];
+  }
+  return 'images/products/404.png';
+
+}
+
 // print cart content when press at cart button 
 function viewcart(){
   if(true){
@@ -143,7 +203,7 @@ function printAccountMenu(){
             <li><a href="/mrrobot/profile.php?id=orders">Orders</a></li>
             <li><a href="/mrrobot/profile.php?id=history">Orders History</a></li>
             <li><a href="/mrrobot/profile.php?id=setting">Settings</a></li>
-            <li><a href="/mrrobot/logout.php">Log Out</a></li>
+            <li><a href="/mrrobot/logout.php" onclick="return confirm(\'Are you sure?\')">Log Out</a></li>
                       </ul>
         </li>';
 

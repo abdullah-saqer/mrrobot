@@ -11,7 +11,7 @@ body{
 }
 .thumbnails{
 	margin-left: -20px;
-	overflow:auto;
+	/*overflow:auto;*/
     list-style: none;
     padding: 0;
     margin: 0;
@@ -76,3 +76,19 @@ font-size:16px;
 .nav-tabs{
   margin-bottom: 8px !important;
 }
+
+.thumbnail img{
+  max-height: 185px;
+}
+.thumbnail{
+      margin-bottom: 0px !important;
+    }
+.image-additional{
+      margin-top: 5px !important;
+}
+    /*
+ol, ul {
+    margin-top: 14px !important;
+  }
+
+    */

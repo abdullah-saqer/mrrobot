@@ -119,7 +119,7 @@ $("#change-personal").click(function(){
         type:'POST',
         data:'ChangePersonal=1&userId='+id+'&firstName='+firstName+'&lastName='+lastName+'&telephone='+telephone+"&email="+email,
         success:function(result){
-            alert(result);
+            displayMessage(result);
                
 
         }
@@ -137,7 +137,7 @@ $("#change-address").click(function(){
         type:'POST',
         data:'ChangeAddress=1&userId='+id+'&address1='+address1+'&address2='+address2+'&city='+city,
         success:function(result){
-            alert(result);
+            displayMessage(result);
                
 
         }
@@ -154,7 +154,7 @@ $("#change-password").click(function(){
         type:'POST',
         data:'ChangePassword=1&userId='+id+'&old_password='+old_password+'&new_password='+new_password,
         success:function(result){
-            alert(result);
+            displayMessage(result);
                
 
         }
@@ -340,7 +340,7 @@ function deleteFromWishlist(id){
         type:'POST',
         data:'deleteFromWishlist=1&wishListId='+id,
         success:function(result){
-        alert(result);
+          displayMessage(result);
 
       
        
@@ -550,4 +550,8 @@ function getOdersHistoryTable(userId){
             
 
                 });
+}
+function displayMessage(message){
+  $('#content').before('<div class="alert alert-success"><i class="fa fa-check-circle"></i> ' + message+ ' <button type="button" class="close" data-dismiss="alert">&times;</button></div>');
+        $('html, body').animate({ scrollTop: 0 }, 'slow');
 }

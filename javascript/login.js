@@ -15,6 +15,7 @@ $(".glyphicon-eye-open").bind('mousedown touchstart',function(){
 
 
 $("#login_btn").click(function(){
+    $(this).attr('disabled',true);
     var email=$("#input-username").val();
     var password=$("#input-password").val();
     if(email.length&&password.length){
@@ -25,6 +26,7 @@ $("#login_btn").click(function(){
         success:function(result){
         //result=JSON.parse(result);
         if(result==-1){
+              $('#login_btn').attr('disabled',false);
             $("#error-message").html("Incorrect email or password");
         }
         else{
@@ -36,6 +38,7 @@ $("#login_btn").click(function(){
 
     }
     else{
+        
         $("#error-message").html("Please fill all required informations");
 
     }

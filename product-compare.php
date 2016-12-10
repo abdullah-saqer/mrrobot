@@ -50,212 +50,54 @@ require("functions/engine.php");
 				<div class="top-info">Models</div>
 				<ul class="cd-features-list">
 					<li>Price</li>
-					<li>Customer Rating</li>
-					<li>Resolution</li>
-					<li>Screen Type</li>
-					<li>Display Size</li>
-					<li>Refresh Rate</li>
-					<li>Model Year</li>
-					<li>Tuner Technology</li>
-					<li>Ethernet Input</li>
-					<li>USB Input</li>
-					<li>Scart Input</li>
+					<li>BATTERY</li>
+					<li>BODY</li>
+					<li>CAMERA</li>
+					<li>Color</li>
+					<li>DISPLAY</li>
+					<li>NETWORK</li>
 				</ul>
 			</div> <!-- .features -->
-			
 			<div class="cd-products-wrapper">
 				<ul class="cd-products-columns">
+			<?php
+			$features = array();
+			$items = explode(",", $_COOKIE['compareItems']);
+			for ($i=0; $i <count($items) ; $i++) { 
+			$ch = curl_init();
+			curl_setopt($ch, CURLOPT_URL,'http://localhost/PlatinumMall/items/'.$items[$i]);
+			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+			$result = curl_exec($ch);
+			
+				$result=json_decode($result,true);
+				
+				$features=$result['specifications'];
+				$li="";
+				foreach ($features as &$value){
+					$li.='<li>'.$value['specificationValue'].'</li>';
+
+				}
+					$s='
 					<li class="product">
 						<div class="top-info">
 							<div class="check"></div>
 							<div class="img-responsive">
-							<img src="pc/img/product.png" alt="product image">
+							<img src="'.getPrimaryphoto($result['photos']).'" alt="product image">
 							</div>
-							<h3>Sumsung Series 6 J6300</h3>
-						</div> <!-- .top-info -->
+							<h3>'.$result['name'].'</h3>
+						</div> 
 
 						<ul class="cd-features-list">
-							<li>$600</li>
-							<li class="rate"><span>5/5</span></li>
-							<li>1080p</li>
-							<li>LED</li>
-							<li>47.6 inches</li>
-							<li>800Hz</li>
-							<li>2015</li>
-							<li>mpeg4</li>
-							<li>1 Side</li>
-							<li>3 Port</li>
-							<li>1 Rear</li>
+							<li>'.$result['price'].' JOD</li>
+							'.$li.'
+							
 						</ul>
-					</li> <!-- .product -->
+					</li> 
 
-					<li class="product">
-						<div class="top-info">
-							<div class="check"></div>
-							<div class="img-responsive">
-							<img src="pc/img/product.png" alt="product image">
-							</div>
-							<h3>Sumsung Series 6 J6300</h3>
-						</div> <!-- .top-info -->
-
-						<ul class="cd-features-list">
-							<li>$600</li>
-							<li class="rate"><span>5/5</span></li>
-							<li>1080p</li>
-							<li>LED</li>
-							<li>47.6 inches</li>
-							<li>800Hz</li>
-							<li>2015</li>
-							<li>mpeg4</li>
-							<li>1 Side</li>
-							<li>3 Port</li>
-							<li>1 Rear</li>
-						</ul>
-					</li> <!-- .product -->
-
-					<li class="product">
-						<div class="top-info">
-							<div class="check"></div>
-							<div class="img-responsive">
-							<img src="pc/img/product.png" alt="product image">
-							</div>
-							<h3>Sumsung Series 6 J6300</h3>
-						</div> <!-- .top-info -->
-
-						<ul class="cd-features-list">
-							<li>$600</li>
-							<li class="rate"><span>5/5</span></li>
-							<li>1080p</li>
-							<li>LED</li>
-							<li>47.6 inches</li>
-							<li>800Hz</li>
-							<li>2015</li>
-							<li>mpeg4</li>
-							<li>1 Side</li>
-							<li>3 Port</li>
-							<li>1 Rear</li>
-						</ul>
-					</li> <!-- .product -->
-
-					<li class="product">
-						<div class="top-info">
-							<div class="check"></div>
-							<div class="img-responsive">
-							<img src="pc/img/product.png" alt="product image">
-							</div>
-							<h3>Sumsung Series 6 J6300</h3>
-						</div> <!-- .top-info -->
-
-						<ul class="cd-features-list">
-							<li>$600</li>
-							<li class="rate"><span>5/5</span></li>
-							<li>1080p</li>
-							<li>LED</li>
-							<li>47.6 inches</li>
-							<li>800Hz</li>
-							<li>2015</li>
-							<li>mpeg4</li>
-							<li>1 Side</li>
-							<li>3 Port</li>
-							<li>1 Rear</li>
-						</ul>
-					</li> <!-- .product -->
-
-					<li class="product">
-						<div class="top-info">
-							<div class="check"></div>
-							<div class="img-responsive">
-							<img src="pc/img/product.png" alt="product image">
-							</div>
-							<h3>Sumsung Series 6 J6300</h3>
-						</div> <!-- .top-info -->
-
-						<ul class="cd-features-list">
-							<li>$600</li>
-							<li class="rate"><span>5/5</span></li>
-							<li>1080p</li>
-							<li>LED</li>
-							<li>47.6 inches</li>
-							<li>800Hz</li>
-							<li>2015</li>
-							<li>mpeg4</li>
-							<li>1 Side</li>
-							<li>3 Port</li>
-							<li>1 Rear</li>
-						</ul>
-					</li> <!-- .product -->
-
-					<li class="product">
-						<div class="top-info">
-							<div class="check"></div>
-							<div class="img-responsive">
-							<img src="pc/img/product.png" alt="product image">
-							</div>
-							<h3>Sumsung Series 6 J6300</h3>
-						</div> <!-- .top-info -->
-
-						<ul class="cd-features-list">
-							<li>$600</li>
-							<li class="rate"><span>5/5</span></li>
-							<li>1080p</li>
-							<li>LED</li>
-							<li>47.6 inches</li>
-							<li>800Hz</li>
-							<li>2015</li>
-							<li>mpeg4</li>
-							<li>1 Side</li>
-							<li>3 Port</li>
-							<li>1 Rear</li>
-						</ul>
-					</li> <!-- .product -->
-
-					<li class="product">
-						<div class="top-info">
-							<div class="check"></div>
-							<div class="img-responsive">
-							<img src="pc/img/product.png" alt="product image">
-							</div>
-							<h3>Sumsung Series 6 J6300</h3>
-						</div> <!-- .top-info -->
-
-						<ul class="cd-features-list">
-							<li>$600</li>
-							<li class="rate"><span>5/5</span></li>
-							<li>1080p</li>
-							<li>LED</li>
-							<li>47.6 inches</li>
-							<li>800Hz</li>
-							<li>2015</li>
-							<li>mpeg4</li>
-							<li>1 Side</li>
-							<li>3 Port</li>
-							<li>1 Rear</li>
-						</ul>
-					</li> <!-- .product -->
-
-					<li class="product">
-						<div class="top-info">
-							<div class="check"></div>
-							<div class="img-responsive">
-							<img src="pc/img/product.png" alt="product image">
-							</div>
-							<h3>Sumsung Series 6 J6300</h3>
-						</div> <!-- .top-info -->
-
-						<ul class="cd-features-list">
-							<li>$600</li>
-							<li class="rate"><span>5/5</span></li>
-							<li>1080p</li>
-							<li>LED</li>
-							<li>47.6 inches</li>
-							<li>800Hz</li>
-							<li>2015</li>
-							<li>mpeg4</li>
-							<li>1 Side</li>
-							<li>3 Port</li>
-							<li>1 Rear</li>
-						</ul>
-					</li> <!-- .product -->
+						';
+						echo $s;
+									  }?>
+				
 				</ul> <!-- .cd-products-columns -->
 			</div> <!-- .cd-products-wrapper -->
 			

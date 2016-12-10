@@ -36,6 +36,7 @@ require("functions/engine.php");
 <!--slider-->
 <!--zoom-in-->
 <script src="javascript/elevatezoom/jquery.elevatezoom.js" type="text/javascript"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
 <title>MR Robot</title>
 </head>
 <body id="home" >
@@ -148,8 +149,8 @@ require("functions/engine.php");
 <hr>
 </header>
 </div>
-<div class="container">
-<div class="row">         
+<div class="container" >
+<div class="row" id="page-content">         
         <div id="content" class="col-sm-12"><div id="slideshow0" class="owl-carousel" style="opacity: 1;">
     <div class="item">
         <a href="#"><img src="images/slider/iPhone6-1140x380.jpg" alt="iPhone 6" class="img-responsive" /></a>
@@ -166,18 +167,7 @@ require("functions/engine.php");
     <h3>Featured</h3>
 <div class="row">
 <div id="slideshow1" class="owl-carousel" style="opacity: 1;">
-    <div class="item"><?php printItem();?></div>
-    <div class="item"><?php printItem();?></div>
-    <div class="item"><?php printItem();?></div>
-    <div class="item"><?php printItem();?></div>
-    <div class="item"><?php printItem();?></div>
-    <div class="item"><?php printItem();?></div>
-    <div class="item"><?php printItem();?></div>
-    <div class="item"><?php printItem();?></div>
-    <div class="item"><?php printItem();?></div>
-    <div class="item"><?php printItem();?></div>
-    <div class="item"><?php printItem();?></div>
-    <div class="item"><?php printItem();?></div>
+   <?php  print_r(PrintLastestItems(10)); ?>
 </div>
 </div>
 <h3>MOST VIEWED</h3>

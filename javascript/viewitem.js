@@ -1,4 +1,17 @@
+
  $(document).ready(function() {
+
+  var productId = getUrlVars()["id"];
+if(typeof productId == "undefined")
+{
+  window.location.href = '/mrrobot/error.php';
+
+}
+else{
+ getItemById(productId);
+
+
+}
   $('.thumbnails').magnificPopup({
     delegate: 'a',
     type: 'image',
@@ -49,6 +62,23 @@ $('.btn-number').click(function(e){
         input.val(0);
     }
 });
+//add to wishlist
+$('#addToWishList').click(function(e){
+  SuccessMessage('Added To WishList');
+  
+});
+// add to cart
+$('#Add-to-cart').click(function(e){
+    SuccessMessage('Added To Cart');
+  
+});
+/*
+$('#addToCompare').click(function(e){
+    SuccessMessage('Added To Compare');
+    itemCompare.push('hi');
+  
+});
+*/
 $('.input-number').focusin(function(){
    $(this).data('oldValue', $(this).val());
 });
@@ -74,6 +104,11 @@ $('.input-number').change(function() {
     
     
 });
+
+      $("img").error(function () {
+  $(this).unbind("error").attr("src", "images/products/404.png");
+});
+
 $(".input-number").keydown(function (e) {
         // Allow: backspace, delete, tab, escape, enter and .
         if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 190]) !== -1 ||
@@ -171,5 +206,91 @@ $(function () {
 /*360 view*/
 
 
-
 });
+
+function getUrlVars() {
+var vars = {};
+var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) { vars[key] = value;});
+return vars; 
+}
+ function getItemById(productId){
+  var item;
+  $.ajaxSetup({async:false});
+   $.ajax({
+        url:'functions/responder.php',
+        type:'POST',
+        data:'getItemById=1&itemId='+productId,
+        success:function(result){
+        result=JSON.parse(result);
+        if(result.length==0){
+          console.log('no-repeat');
+            // window.location.href = '/mrrobot/error.php';
+        }
+        else{
+            item=result;
+
+        }
+            }
+
+        });
+
+printNavBar(item);
+printItemPhotos(item.photos,item.name);
+$('#tab-description p').text(item.description);
+$('#tab-description').addClass('fade in active ');
+$("#product-name").text(item.name);
+$("#product-brand").attr("href", "/mrrobot/viewitems.php?brand="+item.brand.id);
+$("#product-brand").text(item.brand.name);
+$("#availability").text("Availability: "+((item.quantity)?"In Stock":"Out Of Stock"));
+$("#350-view").attr('disabled',true);
+$('#product_id').attr('value',item.id);
+if(!item.discount){
+$("#price").text(item.price);
+}
+else{
+  var newPrice=(item.price-(item.price * item.discount));
+$("#price").html('<span style="text-decoration:line-through;">'+item.price+' JOD</span>  '+newPrice+' JOD');
+
+}
+if(item.quantity<5)
+$(".input-number").attr('max',item.quantity);
+else
+$(".input-number").attr('max',5); //max number you can buy;
+if(item.specifications)
+printSpecificationTable(item.specifications);
+else
+;
+
+}
+  
+
+ function printNavBar(data){
+  $("#category").text(data.category.name);
+  $("#category").attr("href", "/mrrobot/viewitems.php?category="+data.category.id);
+  $("#brand").text(data.brand.name);
+  $("#brand").attr("href", "/mrrobot/viewitems.php?brand="+data.brand.id);
+  $("#current-page").text(data.name);
+ } 
+ function printItemPhotos(data,productName){
+  for (var i=0; i<data.length; i++){
+  var li=$('<li>',{class:(data[i].primary)?"thumbnail":"image-additional"}).append($('<a>').attr({href:data[i].path,class:'thumbnail'}).append($('<img>', {src:data[i].path,title:productName,alt:productName})));
+ if(data[i].primary){
+  $('.thumbnails').prepend(li);
+  }
+  else{
+  $('.thumbnails').append(li);
+  }
+}
+}
+function printSpecificationTable(data){
+var trHTML="<tbody>";
+ var orderItemsTable='';
+  for (var i = 0; i < data.length; i++) {
+    orderItemsTable+='<tr><th class="text-center">'+data[i].specificationKey+'</th><td >'+data[i].specificationValue+'</td></tr>';
+
+  }
+  trHTML+=orderItemsTable;
+  trHTML+="</tbody>";
+  $('#specifications-table').append(trHTML);
+
+}

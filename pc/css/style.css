@@ -219,8 +219,8 @@ Main Components
 
 .cd-features-list li {
   font-size: 1.4rem;
-  font-weight: bold;
-  padding: 25px 40px;
+  font-weight: 400;
+  padding: 22px 40px;
   border-color: #e6e6e6;
   border-style: solid;
   border-top-width: 1px;
@@ -239,7 +239,7 @@ Main Components
 }
 @media only screen and (min-width: 1170px) {
   .cd-features-list li {
-    font-size: 1.6rem;
+    font-size: 16px;
   }
   .cd-features-list li.rate {
     padding: 22px 0;
@@ -253,7 +253,7 @@ Main Components
   font-weight: bold;
   /* set line-height value equal to font-size of text inside product cells */
   line-height: 14px;
-  padding: 25px 10px;
+  padding: 22px 10px;
   text-align: left;
 }
 @media only screen and (min-width: 1170px) {

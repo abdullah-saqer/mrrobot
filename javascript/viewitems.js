@@ -5,8 +5,8 @@ $(document).ready(function() {
 });
     $('#list').click(function(event){event.preventDefault();
     	$('#products .item').addClass('list-group-item');
-    	$('#list').addClass('active');
-    	$('grid').removeClass('active');
+    	$('#grid').removeClass('active');
+      $('#list').addClass('active');
       $('#products').addClass('list-view-fix');
       
 
@@ -14,8 +14,9 @@ $(document).ready(function() {
     	});
     $('#grid').click(function(event){event.preventDefault();
     	$('#products .item').removeClass('list-group-item');
-    	$('#grid').addClass('active');
-    	$('#list').removeClass('active');
+    	    	$('#list').removeClass('active');
+            $('#grid').addClass('active');
+
       $('#products').removeClass('list-view-fix');
       });
 
@@ -31,36 +32,36 @@ else{
 });
 
          $(function() {
-            $( "#slider-3" ).slider({
+            $( "#slider-3*" ).slider({
                range:true,
                min: 0,
                max: 1000,
                values: [ 0, 1000 ],
                slide: function( event, ui ) {
-                  $( "#price" ).val( ui.values[ 0 ]+" JOD" + " - " + ui.values[ 1 ]+" JOD" );
+                  $( "#price*" ).val( ui.values[ 0 ]+" JOD" + " - " + ui.values[ 1 ]+" JOD" );
                }
            });
-         $( "#price" ).val(  $( "#slider-3" ).slider( "values", 0 )+" JOD" +
-            " - " + $( "#slider-3" ).slider( "values", 1 )+" JOD" );
+         $( "#price*" ).val(  $( "#slider-3*" ).slider( "values", 0 )+" JOD" +
+            " - " + $( "#slider-3*" ).slider( "values", 1 )+" JOD" );
          });
             $(function() {
-            $( "#slider-1" ).slider({
+            $( "#slider-1*" ).slider({
                range:true,
                min: 0,
                max: 500,
                values: [ 35, 200 ],
                slide: function( event, ui ) {
-                  $( "#price-1" ).val( ui.values[ 0 ]+" JOD" + " - " + ui.values[ 1 ]+" JOD" );
+                  $( "#price-1*" ).val( ui.values[ 0 ]+" JOD" + " - " + ui.values[ 1 ]+" JOD" );
                }
            });
-         $( "#price-1" ).val(  $( "#slider-1" ).slider( "values", 0 )+" JOD" +
-            " - " + $( "#slider-1" ).slider( "values", 1 )+" JOD" );
+         $( "#price-1*" ).val(  $( "#slider-1*" ).slider( "values", 0 )+" JOD" +
+            " - " + $( "#slider-1*" ).slider( "values", 1 )+" JOD" );
          });
 
       $('#filters').on('click', '.list-group-item', function(e) {
         var $this = $(this);
         var $alias = $this.data('alias');
-        alert("hello");
+        
         $("#applied-filters ul").append('<li>'+$alias+'<i class="fa fa-times-circle-o" aria-hidden="true" onclick="removeFilter(this)"></i></li>');
 
 });

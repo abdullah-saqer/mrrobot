@@ -1,5 +1,6 @@
 $( document ).ready(function(event) {
     var x =getCookie('platinumMallCookie');
+    
 
 var tabid = getUrlVars()["id"];
 if(typeof tabid == "undefined")

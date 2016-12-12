@@ -2,7 +2,8 @@
 <?php
 //require("functions/connect.php");
 require("functions/engine.php");
-
+if(!isset($_COOKIE['platinumMallCookie']))
+  header('location:login.php')
 ?>
 <!DOCTYPE html>
 <html lang="en">

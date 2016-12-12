@@ -119,7 +119,7 @@ body{
 
     /* Medium Devices, Desktops */
     @media  screen and (max-width:1999px) {
-         #login-div{ padding-bottom: 39px;
+         #login-div{ padding-bottom: 60px;
 }
 
     }

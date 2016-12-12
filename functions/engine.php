@@ -67,7 +67,7 @@ echo'
 ';
 }
 function printItem(){
-  echo '<div class="item  col-xs-4 col-lg-4 grid-group-item"><div class="product-thumb transition">
+  echo '<div class="product-thumb transition">
       <div class="image"><a href="#"><img id="zoom_02" src="images/items/macbook_1-200x200.jpg" alt="MacBook" title="MacBook" class="img-responsive" data-zoom-image="images/items/macbook_air.png"></a></div>
       <div class="caption">
         <h4><a href="#">MacBook</a></h4>
@@ -86,7 +86,7 @@ function printItem(){
         <button type="button" ><i class="fa fa-exchange"></i></button>
       </div>
      </div>
-     </div>
+     
    ';
 }
 
@@ -99,6 +99,8 @@ $ch = curl_init();
   $result=json_decode($result,true);
  
 $count=0;
+if(count($result)==0)
+echo("<h4> No Items Available");
  foreach ($result as &$value){
   $count++;
 PrintItemById($value['id'],$flag);
@@ -121,7 +123,7 @@ else
   $item= '<div class="item  col-xs-4 col-lg-4 grid-group-item">';
 }
   $item.='<div class="product-thumb transition">
-      <div class="image"><a href="view_item.php?id='.$id.'"><img  src="'.getPrimaryphoto($result['photos']).'" alt="'.$result['name'].'" title="'.$result['name'].'" class="img-responsive"</a></div>
+      <div class="image"><a href="view_item.php?id='.$id.'"><img  src="'.getPrimaryphoto($result['photos']).'" alt="'.$result['name'].'" title="'.$result['name'].'" class="img-responsive"></a></div>
       <div class="caption">
         <h4><a href="view_item.php?id='.$id.'">'.$result['name'].'</a></h4>
         <p>'.$result['description'].'</p>
@@ -210,5 +212,21 @@ function printAccountMenu(){
   }
 }
 
+function printLoading(){
+  echo '<div class="item  col-xs-4 col-lg-4 grid-group-item">
+      <div class="product-thumb transition" id="loading">
+      <div class="image"><a href="#"><img id="zoom_02" src="images/loading.gif" alt="MacBook" title="MacBook" class="img-responsive" ></a></div>
+      <div class="caption">
+        <h4 class="text-center">Loading</h4>
+
+              </div>
+                   <div class="button-group">
+        <button type="button" id="cancel-btn"><i class="fa fa-times-circle-o"></i> <span class="hidden-xs hidden-sm hidden-md">Cancel</span></button>
+      </div>
+     
+     </div>
+     </div>
+   ';
+}
 
 ?>

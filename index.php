@@ -167,7 +167,7 @@ require("functions/engine.php");
     <h3>Featured</h3>
 <div class="row">
 <div id="slideshow1" class="owl-carousel" style="opacity: 1;">
-   <?php  print_r(PrintLastestItems(10)); ?>
+   <?php  PrintLastestItems(10,1); ?>
 </div>
 </div>
 <h3>MOST VIEWED</h3>

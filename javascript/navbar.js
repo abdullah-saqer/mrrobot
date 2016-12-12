@@ -19,8 +19,8 @@ $('#addToCompare*').click(function(e){
 	 list= new cookieList("compareItems");
      if(typeof data=='undefined')
 	data=$('#product_id').val();
-	if(list.indexOf(data/*itemId*/)==-1){
-	list.add(data/*itemId*/); 
+	if(list.indexOf(data)==-1){
+	list.add(data); 
     SuccessMessage('Added To  '+'<a href=/mrrobot/product-compare.php>Compare List</a>');
 }
 else

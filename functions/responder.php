@@ -196,5 +196,62 @@ if(isset($_POST['getItemById'])){
 	$result = curl_exec($ch);
 	echo $result;
 	}
+if(isset($_POST['getCategoriesByStoreId'])){
+	$ch = curl_init();
+	curl_setopt($ch, CURLOPT_URL,'http://localhost/PlatinumMall/categories/'.$_POST['storeId']);
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+	$result = curl_exec($ch);
+	echo $result;
+}
+if(isset($_POST['getBrandsByStoreId'])){
+	$ch = curl_init();
+	curl_setopt($ch, CURLOPT_URL,'http://localhost/PlatinumMall/brands/getBrandsBystoreId/'.$_POST['storeId']);
+	curl_setopt($ch, CURLOPT_POST, true);
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+	$result = curl_exec($ch);
+	echo $result;
+}
+if(isset($_POST['getMoreItems'])){
+  $parent = array();
+  $category_array = explode(",", $_COOKIE['categories']);
+  $brand_array= explode(",", $_COOKIE['brands']);
+  //get brands filter and add to barent
+  
+  if(is_numeric($brand_array[0])){
+  	
+  	for ($i=0; $i <count($brand_array) ; $i++) { 
+    	
+    	$brands[]=array('id'=>$brand_array[$i]);
+    }
+      $parent['brands']=$brands;
+  }
+  if(is_numeric($category_array[0])) {
+    for ($i=0; $i <count($category_array) ; $i++) { 
+    
+    $categories[]=array('id'=>$category_array[$i]);
+      }
+      $parent['categories']=$categories;
+
+  }
+  $storeId=$_POST['storeId'];
+  $parent['inStock']=$_POST['inStock'];
+  $parent['specialPrices']=$_POST['specialPrices'];
+  $parent['newArrival']=$_POST['newArrival'];
+  $parent['max']=$_POST['max'];
+  $parent['min']=$_POST['min'];
+  $parent['offset']=$_POST['offset'];
+  $parent=json_encode($parent);
+
+  $ch = curl_init();
+	curl_setopt($ch, CURLOPT_URL,'localhost/PlatinumMall/items/'.$storeId.'/false/55');
+	curl_setopt($ch, CURLOPT_POST, true);
+	curl_setopt( $ch, CURLOPT_POSTFIELDS, $parent );
+	curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json')) ;
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+	$result = curl_exec($ch);
+	echo $result;
+  
+}
 
 ?>

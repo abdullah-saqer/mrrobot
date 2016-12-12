@@ -24,6 +24,7 @@ require("functions/engine.php");
 <link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
 <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
 <script src="javascript/navbar.js" type="text/javascript"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
 <title>View Items</title>
 
 </head>
@@ -47,10 +48,8 @@ require("functions/engine.php");
       <button type="button" class="btn btn-navbar navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse"><i class="fa fa-bars"></i></button>
     </div>
       <div class="navbar-collapse navbar-ex1-collapse collapse " >
-    <div class="list-group">
-          <a data-alias="Desktop" class="list-group-item">Desktop</a>
-          <a data-alias="laptop" class="list-group-item">laptop</a>
-          <a data-alias="Mobile" class="list-group-item">Mobile</a>
+    <div class="list-group" id="category-content">
+          
               </div>
     </div>
    
@@ -62,10 +61,8 @@ require("functions/engine.php");
       <button type="button" class="btn btn-navbar navbar-toggle" data-toggle="collapse" data-target=".navbar-ex2-collapse"><i class="fa fa-bars"></i></button>
     </div>
       <div class="navbar-collapse navbar-ex2-collapse collapse " >
-    <div class="list-group">
-			    <a data-alias="Apple" class="list-group-item">Apple<span class="badge">12</span></a>
-			    <a data-alias="Samsung" class="list-group-item">Samsung<span class="badge">15</span></a>
-			    <a data-alias="Toshiba" class="list-group-item">Toshiba<span class="badge">3</span></a>
+    <div class="list-group" id="brand-content">
+			    
               </div>
     </div>
    
@@ -79,9 +76,9 @@ require("functions/engine.php");
       <div class="navbar-collapse navbar-ex3-collapse collapse " >
     
               <ul class="list-group">
-               <li class="list-group-item"><input type="checkbox" name="more-filter" value="Show in Stock only">Show in Stock only </li>
-			   <li class="list-group-item"><input type="checkbox" name="more-filter" value="Special Prices">Special Prices</li>
-			   <li class="list-group-item"><input type="checkbox" name="more-filter" value="New Arrivals">New Arrivals</li>
+               <li class="list-group-item"><input type="checkbox" name="more-filter" value="inStock" data="false">Show in Stock only </li>
+			   <li class="list-group-item"><input type="checkbox" name="more-filter" value="specialPrices" data="false">Special Prices</li>
+			   <li class="list-group-item"><input type="checkbox" name="more-filter" value="newArrival" data="false">New Arrivals</li>
 			  </ul>
     </div>
    
@@ -94,9 +91,9 @@ require("functions/engine.php");
     </div>
       <div class="navbar-collapse navbar-ex4-collapse collapse " id="price-xs">
      <p>
-         <input type="text" id="price-1">
+         <input type="text" id="price-2">
       </p>
-      <div id="slider-1"></div>
+      <div id="slider-2"></div>
     </div>
    
   </nav>
@@ -115,10 +112,8 @@ require("functions/engine.php");
 		</div>
 		<div id="panel1" class="panel-collapse collapse">
 			<div class="panel-body">
-               <div class="list-group">
-			    <a data-alias="Desktop" class="list-group-item">Desktop</a>
-			    <a data-alias="Laptop" class="list-group-item">Laptop</a>
-			    <a data-alias="Mobile" class="list-group-item">Mobile</a>
+               <div class="list-group" id="category-content">
+			    
               </div>
 			</div>
 		</div>
@@ -135,10 +130,8 @@ require("functions/engine.php");
 		</div>
 		<div id="panel2" class="panel-collapse collapse">
 			<div class="panel-body">
-               <div class="list-group">
-			    <a data-alias="Apple" class="list-group-item">Apple<span class="badge">12</span></a>
-			    <a data-alias="Samsung" class="list-group-item">Samsung<span class="badge">15</span></a>
-			    <a data-alias="Toshiba" class="list-group-item">Toshiba<span class="badge">3</span></a>
+               <div class="list-group" id="brand-content">
+			    
               </div>
 			</div>
 		</div>
@@ -156,12 +149,11 @@ require("functions/engine.php");
 		<div id="panel3" class="panel-collapse collapse">
 			<div class="panel-body">
               
-              <ul class="list-group">
-               <li data-alias="Show in Stock only" class="list-group-item"><input type="checkbox" name="more-filter" value="Show in Stock only">Show in Stock only </li>
-			   <li  data-alias="Special Prices" class="list-group-item"><input type="checkbox" name="more-filter" value="Special Prices">Special Prices</li>
-			   <li data-alias="New Arrivals" class="list-group-item"><input type="checkbox" name="more-filter" value="New Arrivals">New Arrivals</li>
-			  </ul>
-              
+         <ul class="list-group">
+               <li class="list-group-item"><input type="checkbox" name="inStock"  data="false">Show in Stock only </li>
+         <li class="list-group-item"><input type="checkbox" name="specialPrices"  data="false">Special Prices</li>
+         <li class="list-group-item"><input type="checkbox" name="newArrival"  data="false">New Arrivals</li>
+        </ul>
 			</div>
 		</div>
     </div>
@@ -180,7 +172,7 @@ require("functions/engine.php");
              <p>
          <input type="text" id="price">
       </p>
-      <div id="slider-3"></div>
+      <div id="slider"></div>
             
 			</div>
 		</div>
@@ -240,17 +232,13 @@ require("functions/engine.php");
        
         
         PrintLastestItems(10,0);
-   /* for ($i=0; $i <10 ; $i++) { 
-      printItem();
-    }
-      */
-      
-			
+  
+        printLoading();			
         ?>
 
        
        </div>
-        	
+        	<div id="end-of-items" offset="10"><p style="display: none;">end of div</p></div>
         </div>
 
         </div>

@@ -236,7 +236,7 @@ return vars;
 
 printNavBar(item);
 printItemPhotos(item.photos,item.name);
-$('#tab-description p').text(item.description);
+$('#tab-description p').html(item.description);
 $('#tab-description').addClass('fade in active ');
 $("#product-name").text(item.name);
 $("#product-brand").attr("href", "/mrrobot/viewitems.php?brand="+item.brand.id);
@@ -245,7 +245,7 @@ $("#availability").text("Availability: "+((item.quantity)?"In Stock":"Out Of Sto
 $("#350-view").attr('disabled',true);
 $('#product_id').attr('value',item.id);
 if(!item.discount){
-$("#price").text(item.price);
+$("#price").text(item.price+" JOD");
 }
 else{
   var newPrice=(item.price-(item.price * item.discount));

@@ -1,6 +1,6 @@
 $(document).ready(function(event){
   $('#slideshow0').owlCarousel({
-  items: 6,
+  items: 3,
   autoPlay: 3000,
   singleItem: true,
   navigation: true,

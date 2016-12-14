@@ -159,7 +159,7 @@ require("functions/engine.php");
         <a href="#"><img src="images/slider/macbook-pro-1140x380.jpg" alt="MacBookAir" class="img-responsive" /></a>
       </div>
       <div class="item"><a href="#">
-        <img src="images/slider/sm s7-1140x380.jpg" alt="MacBookAir" class="img-responsive" /></a>
+        <img src="images/slider/sm s7-1140x380.jpg" alt="samsung" class="img-responsive" /></a>
       </div>
   </div>
   </div>

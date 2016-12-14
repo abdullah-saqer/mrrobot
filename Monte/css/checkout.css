@@ -1,0 +1,13 @@
+h1{
+	margin-top: 20px;
+}
+h4.panel-title a {
+    font-size: 17px !important;
+    color: black !important;
+}
+#delivery-panel{
+	
+    color: black;
+    line-height: 1.8em;
+    font-size: 15px;
+}

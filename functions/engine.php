@@ -99,8 +99,10 @@ $ch = curl_init();
   $result=json_decode($result,true);
  
 $count=0;
-if(count($result)==0)
+if(count($result)==0){
 echo("<h4> No Items Available");
+return;
+}
  foreach ($result as &$value){
   $count++;
 PrintItemById($value['id'],$flag);
@@ -131,7 +133,7 @@ else
               </div>
       <div class="button-group">
         <button type="button" ><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md">Add to Cart</span></button>
-        <button type="button" ><i class="fa fa-heart"></i></button>
+        <button type="button" ><i class="fa fa-heart" id="addToWishlist" data-button="'.$id.'"></i></button>
         <button type="button" ><i class="fa fa-exchange" id="addToCompare" data-button="'.$id.'"></i></button>
       </div>
      </div>';

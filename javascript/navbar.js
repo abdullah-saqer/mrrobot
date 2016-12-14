@@ -28,7 +28,22 @@ else
 
   
 });
+$('#addToWishlist*').click(function(e){
+    var data=$(this).attr('data-button');
+    var userId =getCookie('platinumMallCookie');
+    if(data && userId)
+        $.ajax({
+        url:'functions/responder.php',
+        type:'POST',
+        data:'addToWishList=1&userId='+userId+'&itemId='+data,
+        success:function(result){
+           if(result=="Added")
+          SuccessMessage('Added To  '+'<a href=/mrrobot/profile.php?id=wishlist>Wish List</a>');
+}
+        });
 
+
+});
 });
 
 var cookieList = function(cookieName) {
@@ -93,4 +108,18 @@ function SuccessMessage(message){
           
 
           $('html, body').animate({ scrollTop: 0 }, 'slow');
+}
+function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for(var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
 }

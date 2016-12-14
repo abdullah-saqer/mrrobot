@@ -253,5 +253,26 @@ if(isset($_POST['getMoreItems'])){
 	echo $result;
   
 }
+if(isset($_POST['addToWishList'])){
+  $parent = array();
+$user[]=array('id'=>$_POST['userId']);
+$item[]=array('id'=>$_POST['itemId']);
+$parent['user']=$user;
+$parent['item']=$item;
+ $parent=json_encode($parent);
+
+
+
+  $ch = curl_init();
+	curl_setopt($ch, CURLOPT_URL,'localhost/PlatinumMall/wishLists');
+	curl_setopt($ch, CURLOPT_POST, true);
+	curl_setopt( $ch, CURLOPT_POSTFIELDS, $parent );
+	curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json')) ;
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+	$result = curl_exec($ch);
+	echo $result;
+ 
+}
 
 ?>

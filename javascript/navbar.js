@@ -37,8 +37,26 @@ $('#addToWishlist*').click(function(e){
         type:'POST',
         data:'addToWishList=1&userId='+userId+'&itemId='+data,
         success:function(result){
+
            if(result=="Added")
           SuccessMessage('Added To  '+'<a href=/mrrobot/profile.php?id=wishlist>Wish List</a>');
+}
+        });
+
+
+});
+$('#addToCart*').click(function(e){
+    var data=$(this).attr('data-button');
+    var userId =getCookie('platinumMallCookie');
+    if(data && userId)
+        $.ajax({
+        url:'functions/responder.php',
+        type:'POST',
+        data:'addToCart=1&userId='+userId+'&itemId='+data,
+        success:function(result){
+            console.log(result);
+           if(result=="Cart recorde added successfully")
+          SuccessMessage('Added To  '+'<a href=#>Cart</a>');
 }
         });
 

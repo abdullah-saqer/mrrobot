@@ -1,7 +1,7 @@
 <?php
 //require("functions/connect.php");
 require("functions/engine.php");
-
+init_guest();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -88,11 +88,13 @@ require("functions/engine.php");
             <ul class="dropdown-menu " id="cat" data-hover="dropdown">
             <ul class="list-inline " >
                 
-                <!--test-->
+                <li id="Laptop"  class="dropdown-submenu" data-hover="dropdown">
+                <a tabindex="-1" href="view_items.php">View All Items</a>
+                </li>
               <li id="Laptop"  class="dropdown-submenu" data-hover="dropdown">
                 <a  href="#">Laptop</a>
                 <ul class="dropdown-menu">
-                  <li><a tabindex="-1" href="#">Apple</a></li>
+                  <li></li>
                   <li><a href="#">HP</a></li>
                   <li><a href="#">Toshiba</a></li>
                 </ul>
@@ -124,23 +126,7 @@ require("functions/engine.php");
         </div>
     </li>
     <!--shop by store-->
-    <li>
-        <div class="btn-group "> <a id="shopbtn" class="btn btn-primary dropdown-toggle" data-hover="dropdown" data-toggle="dropdown" href="#">
-        Shop By store
-        <i class="icon icon-caret-right"></i>
-      </a>
-
-            <ul class="dropdown-menu" id="store">
-            <ul class="list-inline" >
-                <li><a href="#">Platinum</a></li>
-                <li><a href="#">MRROBOT</a></li>
-                <li><a href="#">Computer Center</a></li>
-               
-                <li><a href="#">#100</a></li>
-                </ul>
-            </ul>
-        </div>
-    </li>
+   
 
 </ul>
 </div>

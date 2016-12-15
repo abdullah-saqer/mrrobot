@@ -64,12 +64,27 @@ $('.btn-number').click(function(e){
 });
 //add to wishlist
 $('#addToWishList').click(function(e){
-  SuccessMessage('Added To WishList');
+  
   
 });
 // add to cart
 $('#Add-to-cart').click(function(e){
-    SuccessMessage('Added To Cart');
+   var data=$('#product_id').val();
+   var quantity=$('#quantity').val();
+    var userId =getCookie('platinumMallCookie');    
+    if(data && userId)
+        $.ajax({
+        url:'functions/responder.php',
+        type:'POST',
+        data:'addToCart=1&userId='+userId+'&itemId='+data+'&quantity='+quantity,
+        success:function(result){
+           if(result=="Cart recorde added successfully")
+          SuccessMessage('Added To  '+'<a href=#>Cart</a>');
+     
+}  
+        }); 
+
+    
   
 });
 /*

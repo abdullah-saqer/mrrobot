@@ -2,7 +2,7 @@
 <?php
 //require("functions/connect.php");
 require("functions/engine.php");
-
+init_guest();
 ?>
 <!DOCTYPE html>
 <html lang="en">

@@ -55,8 +55,10 @@ if(isset($_POST['userLogin'])){
 	$result = curl_exec($ch);
 	if($result!=-1){
 	setcookie("platinumMallCookie", $result, time() + 86400*30,"/");
+	echo($_COOKIE['platinumMallCookie']);
+	
 	}
-	echo $result;
+	//echo $result;
 
 
 }
@@ -274,5 +276,24 @@ $parent['item']=$item;
 	echo $result;
  
 }
+if(isset($_POST['addToCart'])){
+  $parent = array();
+$user[]=array('id'=>$_POST['userId']);
+$item[]=array('id'=>$_POST['itemId']);
+$parent['user']=$user;
+$parent['item']=$item;
+if(isset($_POST['quantity']))
+$parent['quantity']=$_POST['quantity'];
+$parent['quantity']=1;
+ $parent=json_encode($parent);
+  $ch = curl_init();
+	curl_setopt($ch, CURLOPT_URL,'localhost/PlatinumMall/carts');
+	curl_setopt($ch, CURLOPT_POST, true);
+	curl_setopt( $ch, CURLOPT_POSTFIELDS, $parent );
+	curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json')) ;
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
+	$result = curl_exec($ch);
+	echo $result;
+}
 ?>

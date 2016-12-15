@@ -69,21 +69,16 @@ function getCartContent(userId){
      return false;
  });
 
- $(document).on('click', 'tr .btn-primary', function (e) { 
+$(document).on('click', 'tr .btn-primary', function () { 
     var flag=confirm("Are you sure ?");
-    
-   if(!flag)
+   
+  if(!flag)
         return false ;
-    var quantity=$(this).siblings('#quantity').val();
+
+    var index = $("tr .btn-primary*").index(this);
+    var quantity=$("#quantity*:eq("+index+")").val();;;
     var cartId=$(this).attr('data');
     changeQuantity(cartId,quantity);
-    /* deleteFromCart(this.id);*//*
-     var sub=$(this).attr('data');
-     $('#Sub-Total').text($('#Sub-Total').text()-sub);
-     $('#total').text($('#Sub-Total').text());
-     $(this).closest('tr').remove();
-     
-     return false;*/
  });
 function getCookie(cname) {
     var name = cname + "=";

@@ -95,9 +95,7 @@
       I want to use an existing address</label>
   </div>
   <div id="delivery-existing">
-    <select id="old-address" class="form-control">
-                  <option value="2" selected="selected">sdasd sadasd, sdsad, sdas, Berkshire, United Kingdom</option>
-                </select>
+    <p id="old-address"></p>
   </div>
   <div class="radio">
     <label>
@@ -108,7 +106,7 @@
     <div class="form-group required">
       <label class="col-sm-2 control-label" >Address 1</label>
       <div class="col-sm-10">
-        <input type="text" name="address_1" value="" placeholder="Address 1" class="form-control">
+        <input type="text" id="input-delivery-address-1" value="" placeholder="Address 1" class="form-control">
       </div>
     </div>
     <div class="form-group">

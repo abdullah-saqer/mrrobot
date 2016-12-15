@@ -3,6 +3,7 @@
 require("functions/engine.php");
 if(isset($_COOKIE['platinumMallCookie']))
 header("Location: /mrrobot/index.php"); 
+setcookie("platinumMallGuestCookie", "", time() - 86400*30,"/");
 ?>
 <!DOCTYPE html>
 <html>

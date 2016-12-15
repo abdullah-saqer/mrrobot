@@ -10,7 +10,7 @@ if(response.length == 0){
   displayErrorMessage("You can't leave Captcha Code empty");
   return ;
 }
-alert(response);
+
    
     var firstName=$("#input-firstname").val();
     var lastName=$("#input-lastname").val();
@@ -71,7 +71,7 @@ alert(response);
 });
    // validate phone number 
    $("input[type=tel]").change( function(){
-    aler
+    
              
 
     if(!validate(this)){

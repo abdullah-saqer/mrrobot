@@ -31,6 +31,7 @@ $("#login_btn").click(function(){
         }
         else{
             window.location.href = '/mrrobot/index.php';
+        
         }
        
             }

@@ -132,7 +132,7 @@ else
          <p class="price">'.$result['price'].' JOD<span class="price-tax">Store:Mrrobot</span></p>
               </div>
       <div class="button-group">
-        <button type="button" ><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md">Add to Cart</span></button>
+        <button id="addToCart" data-button="'.$id.'"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md">Add to Cart</span></button>
         <button type="button" ><i class="fa fa-heart" id="addToWishlist" data-button="'.$id.'"></i></button>
         <button type="button" ><i class="fa fa-exchange" id="addToCompare" data-button="'.$id.'"></i></button>
       </div>
@@ -230,5 +230,19 @@ function printLoading(){
      </div>
    ';
 }
+function init_guest(){
+if(isset($_COOKIE['platinumMallCookie']))
+  return;
+if(isset($_COOKIE['platinumMallGuestCookie']))
+  return;
+
+ $ch = curl_init();
+  curl_setopt($ch, CURLOPT_URL,'http://localhost/PlatinumMall/guests/getMax');
+  curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+  $result = curl_exec($ch);
+setcookie("platinumMallGuestCookie", $result+1, time() + 86400*30,"/");
+
+}
+
 
 ?>

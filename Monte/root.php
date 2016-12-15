@@ -1,4 +1,7 @@
-
+<?php
+require("functions/engine.php");
+init_guest();
+?>
 <!DOCTYPE HTML>
 <html>
 <head>

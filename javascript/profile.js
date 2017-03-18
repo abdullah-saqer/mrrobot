@@ -121,7 +121,6 @@ $("#change-personal").click(function(){
         data:'ChangePersonal=1&userId='+id+'&firstName='+firstName+'&lastName='+lastName+'&telephone='+telephone+"&email="+email,
         success:function(result){
             displayMessage(result);
-               
 
         }
     });
@@ -156,23 +155,15 @@ $("#change-password").click(function(){
         data:'ChangePassword=1&userId='+id+'&old_password='+old_password+'&new_password='+new_password,
         success:function(result){
             displayMessage(result);
-               
-
         }
     });
-
-    
-
-
 
 });
 
 
  ///end of document ready
 
-  });
-
-
+});
 
 
 
@@ -245,12 +236,8 @@ function getInformations(userId){
         $("#add1").html(result.address1);
         $("#add2").html(result.address2);
         $("#city").html(result.city);
-
-
-      
-       
-            }
-        });
+       }
+    });
 }
 /////////// get wish list table
 function getWishlist(userId){
@@ -261,6 +248,7 @@ function getWishlist(userId){
         type:'POST',
         data:'getUserWishList=1&userId='+userId,
         success:function(result){
+          console.log(result);
             result=JSON.parse(result);
             if(result.length>0){
 
@@ -335,18 +323,14 @@ function getDiscount(discount){
 }
 /////////////////
 function deleteFromWishlist(id){
-
     $.ajax({
         url:'functions/responder.php',
         type:'POST',
         data:'deleteFromWishlist=1&wishListId='+id,
         success:function(result){
           displayMessage(result);
-
-      
-       
-            }
-        });
+        }
+      });
 
 }
 /////////////////////// Setting Validate and Change
@@ -403,33 +387,27 @@ function displayErrorMessage(message) {
       
  function getOdersTable(userId){
 
-
     $.ajax({
         url:'functions/responder.php',
         type:'POST',
         data:'getOrdersByUserId=1&userId='+userId,
         success:function(result){
             result=JSON.parse(result);
-            //console.log(result[0].orderItems);
-            if(result.length>0){
+          if(result.length>0){
             var trHTML="<tbody>";
            $('#orders-table tbody').remove();
            var count=0;
             for (var i = 0; i <result.length; i++) {
-
                if(result[i].status!=4){
-                count=1;
-              var id=result[i].id;
-              var status=getOrderStatus(result[i].status);
-              var total=result[i].total;
-              trHTML += '<tr class="header expand"><td class="text-center">' +id+ '</td><td class="text-center">' + status+ '</td><td class="text-center">' +total+ '<span class="sign plus"></td></tr>';
-              trHTML+='<!--orderditems-->'
-              trHTML+=getOrderItems(result[i].orderItems);
-
-
-                    }
-                    
-                  }
+                    count=1;
+                    var id=result[i].id;
+                    var status=getOrderStatus(result[i].status);
+                    var total=result[i].total;
+                    trHTML += '<tr class="header expand"><td class="text-center">' +(i+1)+ '</td><td class="text-center">' + status+ '</td><td class="text-center">' +total+ '<span class="sign plus"></td></tr>';
+                    trHTML+='<!--orderditems-->'
+                    trHTML+=getOrderItems(result[i].orderItems);
+               }        
+            }
                     trHTML+="</tbody>";
                      $('#orders-table').append(trHTML).on('click', '.sign', function () {
                       
@@ -448,9 +426,9 @@ function displayErrorMessage(message) {
                         });
                 }
                   if(!count){
-                $("#order-details").empty();
-                $("#order-details").append("<h4>No Order Placed</h4");
-            }
+                    $("#order-details").empty();
+                    $("#order-details").append("<h4>No Order Placed</h4");
+                   }
             }
             
 
@@ -467,41 +445,28 @@ function getOrderStatus(stat){
 
 
 function getOrderItems(orderItems){
- 
-    
-    var orderItemsTable='<tr class="table_content" ><td colspan="3" id="itemstable"><table class="table table-bordered" id="inner-table" ><tr><th>Item ID</th><th>Name</th><th>Quantity</th><th>Price</th></tr>';
-
+ var orderItemsTable='<tr class="table_content" ><td colspan="3" id="itemstable"><table class="table table-bordered" id="inner-table" ><tr><th>#</th><th>Name</th><th>Quantity</th><th>Price</th></tr>';
    for (var i = 0; i <orderItems.length; i++) {
+
     var id=orderItems[i].id;
     var quantity=orderItems[i].quantity;
     var price=(orderItems[i].price-(orderItems[i].price * orderItems[i].discount));
-    var items;
-    var itemId;
-    var name;
-    var brand;
-    $.ajaxSetup({async:false});
-    $.ajax({   
-        url:'functions/responder.php',
-        type:'POST',
-        data:'getOrdersItemsById=1&id='+id,
-        success:function(result){
-            result=JSON.parse(result);
-            items=result.item;
-            itemId=items.id;
-            name=items.name;
-            }
-      });
-              
-            
-             orderItemsTable+='<tr><td >'+itemId+'</td><td >'+name+'</td><td>'+quantity+'</td><td>'+price+'</td></tr>';
+
+    var item=orderItems[i].item;
+    var itemId=item.id;
+    var name=item.name;
+    var brand=item.brand.name;
+
+
+    orderItemsTable+='<tr><td >'+(i+1)+'</td><td >'+name+'</td><td>'+quantity+'</td><td>'+price+'</td></tr>';
   }
-            orderItemsTable+='</table></td></tr>';
-            return orderItemsTable;
 
+  orderItemsTable+='</table></td></tr>';
 
+  return orderItemsTable;
 }
-function getOdersHistoryTable(userId){
 
+function getOdersHistoryTable(userId){
 
     $.ajax({
         url:'functions/responder.php',

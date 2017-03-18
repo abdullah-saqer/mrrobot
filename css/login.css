@@ -1,185 +1,211 @@
-body{
-	font-family: 'Open Sans', sans-serif !important;
+body {
+    font-family: 'Open Sans', sans-serif !important;
     font-weight: 400;
     color: #666;
     font-size: 12px;
     line-height: 20px;
-   /* width: 100%;*/
-   
-    
+    /* width: 100%;*/
+
 }
+
 .noselect {
-  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Chrome/Safari/Opera */
-     -khtml-user-select: none; /* Konqueror */
-       -moz-user-select: none; /* Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none; /* Non-prefixed version, currently
-                                  not supported by any browser */
+    -khtml-user-select: none; /* Konqueror */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none;
+    /* Non-prefixed version, currently
+                                     not supported by any browser */
 }
 
 #reg-div {
-  position: relative;
-  background-color: #f7f8f9;
-} 
-/* Main div for border to extend to 50% from bottom left corner */
-#reg-div:after {
-  content:""; 
-  background: #703838; 
-  position: absolute; 
-  bottom: 0px; 
-  left: 0; 
-  height: 100%; 
-  width: 1px;
-}
-#login-div a{
-	text-decoration: none;
-	color:#545150
-;
-	margin-top: 1%;
-}
-#login-div a:hover{
-	text-decoration: none;
-	color:red;
-}
-#login-div h3{
-  padding-left: 15px;
-}
+    position: relative;
+    background-color: #f7f8f9;
 }
 
-#fix-footer{
+/* Main div for border to extend to 50% from bottom left corner */
+#reg-div:after {
+    content: "";
+    background: #703838;
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    height: 100%;
+    width: 1px;
+}
+
+#login-div a {
+    text-decoration: none;
+    color: #545150;
+    margin-top: 1%;
+}
+
+#login-div a:hover {
+    text-decoration: none;
+    color: red;
+}
+
+#login-div h3 {
+    padding-left: 15px;
+}
+
+}
+
+#fix-footer {
 
     margin: 0;
     width: 100%;
     padding: 0;
 
 }
-#content{
-      margin: 30px auto auto auto;
-     border: 1px solid #222;
-      border-radius: 3px;
+
+#content {
+    margin: 30px auto auto auto;
+    border: 1px solid #222;
+    border-radius: 3px;
 }
 
 /*custom off set*/
 /* location bar*/
-.breadcrumb{
-      margin: 70px 0 20px 0;
+.breadcrumb {
+    margin: 70px 0 20px 0;
     padding: 8px 0;
     border: 1px solid #ddd;
 }
-.breadcrumb  li{
-      text-shadow: 0 1px 0 #FFF;
+
+.breadcrumb li {
+    text-shadow: 0 1px 0 #FFF;
     padding: 0 20px;
     position: relative;
     white-space: nowrap;
 }
+
 .breadcrumb > li + li:before {
-  content: '';
-  padding: 0;
+    content: '';
+    padding: 0;
 }
+
 .breadcrumb > li:after {
-  content: '';
-  display: block;
-  position: absolute;
-  top: -3px;
-  right: -5px;
-  width: 26px;
-  height: 26px;
-  border-right: 1px solid #DDD;
-  border-bottom: 1px solid #DDD;
-  -webkit-transform: rotate(-45deg);
-  -moz-transform: rotate(-45deg);
-  -o-transform: rotate(-45deg);
-  transform: rotate(-45deg);
+    content: '';
+    display: block;
+    position: absolute;
+    top: -3px;
+    right: -5px;
+    width: 26px;
+    height: 26px;
+    border-right: 1px solid #DDD;
+    border-bottom: 1px solid #DDD;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
 }
-#reg-div .btn{
-  width: 60%;
-  margin-bottom: 8px;
+
+#reg-div .btn {
+    width: 60%;
+    margin-bottom: 8px;
 }
+
 /*fix background color*/
-.row{
-  margin-right: 0px !important;
-  margin-left: 0px !important;
+.row {
+    margin-right: 0px !important;
+    margin-left: 0px !important;
 }
-#reg-div{
-      padding-bottom: 13px;
-}
-#login-div{
-  background-color:#f4f6f9;
 
+#reg-div {
+    padding-bottom: 13px;
+}
+
+#login-div {
+    background-color: #f4f6f9;
 
 }
- 
-    @media  screen and (min-width : 1200px) {
-      #reg-div {
-   padding-bottom: 53px;
+
+@media screen and (min-width: 1200px) {
+    #reg-div {
+        padding-bottom: 53px;
 
     }
-  }
-
-    /* Medium Devices, Desktops */
-    @media  screen and (max-width:1999px) {
-         #login-div{ padding-bottom: 60px;
 }
+
+/* Medium Devices, Desktops */
+@media screen and (max-width: 1999px) {
+    #login-div {
+        padding-bottom: 60px;
+    }
+
+}
+
+/* Small Devices, Tablets */
+@media screen and (max-width: 991px) {
+    #login-div {
+        padding-bottom: 29px;
 
     }
 
-    /* Small Devices, Tablets */
-    @media  screen and (max-width : 991px) {
-               #login-div{ padding-bottom: 29px;
-
-}
-#reg-div .btn{
-      width: 86%;
-}
+    #reg-div .btn {
+        width: 86%;
     }
+}
 
-    /* Extra Small Devices, Phones */ 
-    @media screen and (max-width : 769px) {
-      #login-div{
-    padding-top: 1px;
-    padding-bottom: 1px;
-      }
-      #reg-div{
+/* Extra Small Devices, Phones */
+@media screen and (max-width: 769px) {
+    #login-div {
         padding-top: 1px;
-      }
-      #reg-div:after{
-        content: ;
-        background:transparent;
-      }
+        padding-bottom: 1px;
+    }
 
+    #reg-div {
+        padding-top: 1px;
     }
-    @media screen and (max-width : 342px) {
-#reg-div .btn{
-  width: 75%;
-  margin-bottom: 8px;
+
+    #reg-div:after {
+        content:;
+        background: transparent;
+    }
+
 }
+
+@media screen and (max-width: 342px) {
+    #reg-div .btn {
+        width: 75%;
+        margin-bottom: 8px;
     }
-    /*css for eye icon*/
-    .inner-addon { 
-    position: relative; 
+}
+
+/*css for eye icon*/
+.inner-addon {
+    position: relative;
 }
 
 /* style icon */
-.inner-addon { 
-    position: relative; 
+.inner-addon {
+    position: relative;
 }
 
 /* style icon */
 .inner-addon .glyphicon {
-  position: absolute;
-  padding: 10px;
-  cursor: pointer;
+    position: absolute;
+    padding: 10px;
+    cursor: pointer;
 }
 
 /* align icon */
-.right-addon .glyphicon { right: 0px; 
-display:none;
+.right-addon .glyphicon {
+    right: 0px;
+    display: none;
 }
 
 /* add padding  */
-.left-addon input  { padding-left:  11px; }
-.right-addon input { padding-right: 30px; }
-#error-message{
-  color:#ff3333;
+.left-addon input {
+    padding-left: 11px;
+}
+
+.right-addon input {
+    padding-right: 30px;
+}
+
+#error-message {
+    color: #ff3333;
 }

@@ -1,10 +1,36 @@
-body{
-	font-family: 'Open Sans', sans-serif !important;
+body {
+    font-family: 'Open Sans', sans-serif !important;
     font-weight: 400;
     color: #666;
     font-size: 12px;
     line-height: 20px;
-   /* width: 100%;*/
-   
-    
+    /* width: 100%;*/
+}
+
+#check-out {
+    background-color: #1f90bb;
+}
+
+#content {
+    margin-top: 20px;
+    border: 2px solid;
+    padding: 14px;
+    border-radius: 25px;
+    border-color: rgb(221, 221, 221);
+}
+
+#continue-shoping {
+    background-color: rgb(221, 221, 221);
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #357ebd !important;
+    border-color: #357ebd !important;
+}
+.btn{
+    height: 33px;
+}
+h1 {
+    margin-bottom: 10px;
 }

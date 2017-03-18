@@ -10,7 +10,6 @@ if(response.length == 0){
   displayErrorMessage("You can't leave Captcha Code empty");
   return ;
 }
-
    
     var firstName=$("#input-firstname").val();
     var lastName=$("#input-lastname").val();
@@ -33,6 +32,7 @@ if(response.length == 0){
         data:'addNewUser=1&firstName='+firstName+'&lastName='+lastName+'&telephone='+telephone+"&email="+email+"&address="+address+"&address2="+address2+"&city="+city+"&password="+password+"&sub="+sub+"&date="+date,
         success:function(result){
             alert(result);
+            if(result=="Your Account has been registered successfully")
                window.location.href = '/mrrobot/login.php';
 
         }

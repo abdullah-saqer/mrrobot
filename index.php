@@ -164,7 +164,7 @@
             <?php PrintLastestItems(10, 1); ?>
         </div>
     </div>
-    <h3>MOST VIEWED<?php echo getStoreId();  ?></h3>
+    <h3>MOST VIEWED</h3>
     <div class="row">
         <div id="slideshow2" class="owl-carousel" style="opacity: 1;">
             <div class="item"><?php printItem(); ?></div>

@@ -2,12 +2,8 @@
     include('global.php');
     session_start();
     ob_start();
-
     function getStoreId() {
-        $storeId = fopen("../Control-Panel/id.txt", "r") or die("Unable to open file!");
-        $id = fread($storeId, filesize("../Control-Panel/id.txt"));
-        fclose($storeId);
-        return $id;
+        return 1;
     }
 
     function printNavBar() {
@@ -321,9 +317,8 @@
 
     function getUserInfo($userId) {
         $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, $GLOBALS['service_url'] . '/users/' . $userId);
+        curl_setopt($ch, CURLOPT_URL, $GLOBALS['service_url'].'/users/' . $userId);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-
         return json_decode(curl_exec($ch), true);
     }
 

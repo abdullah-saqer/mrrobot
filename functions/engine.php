@@ -3,7 +3,7 @@
     session_start();
     ob_start();
     function getStoreId() {
-        return 1;
+        return $GLOBALS['store_id'];
     }
 
     function printNavBar() {
